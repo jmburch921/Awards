@@ -19,7 +19,7 @@ CREATE TABLE public."GroupTypes"
 (
     "GroupTypeId" integer NOT NULL,
     "Name" character varying COLLATE pg_catalog."default",
-    "CssValue" character varying COLLATE pg_catalog."default",
+    "Description" character varying COLLATE pg_catalog."default",
     "InActiveDate" date,
     "InActive" bit(1),
     CONSTRAINT "GroupTypes_pkey" PRIMARY KEY ("GroupTypeId")
