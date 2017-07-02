@@ -1,22 +1,11 @@
+--Access on the database for AwardsDbUser
 
+GRANT TEMPORARY, CONNECT ON DATABASE "Awards_Dev" TO PUBLIC;
 
+GRANT ALL ON DATABASE "Awards_Dev" TO "AwardsDbUser";
 
+ALTER DEFAULT PRIVILEGES
+GRANT ALL ON TABLES TO "AwardsDbUser";
 
-
-
-
-
-
-CREATE TABLE public."NominationTypes"
-(
-    "NominationTypeId" integer NOT NULL,
-    "Name" character varying COLLATE pg_catalog."default",
-    "Description" character varying COLLATE pg_catalog."default",
-    "InActiveDate" date,
-    "InActive" bit(1),
-    CONSTRAINT "NominationTypes_pkey" PRIMARY KEY ("NominationTypeId")
-)
-WITH (
-    OIDS = FALSE
-)
-TABLESPACE pg_default;
+ALTER DEFAULT PRIVILEGES
+GRANT ALL ON TABLES TO postgres;

@@ -1,22 +1,11 @@
 
 
+CREATE DATABASE "Awards_Dev"
+    WITH 
+    OWNER = "AwardsDbUser"
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_United States.1252'
+    LC_CTYPE = 'English_United States.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
 
-
-
-
-
-
-
-CREATE TABLE public."NominationTypes"
-(
-    "NominationTypeId" integer NOT NULL,
-    "Name" character varying COLLATE pg_catalog."default",
-    "Description" character varying COLLATE pg_catalog."default",
-    "InActiveDate" date,
-    "InActive" bit(1),
-    CONSTRAINT "NominationTypes_pkey" PRIMARY KEY ("NominationTypeId")
-)
-WITH (
-    OIDS = FALSE
-)
-TABLESPACE pg_default;
