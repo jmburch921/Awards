@@ -128,7 +128,7 @@ CREATE TABLE public."GroupGrantPersonTypes"
         REFERENCES public."Groups" ("GroupId") MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION,
-    CONSTRAINT "GroupPersonGrantTypes_PersonTypes_fkey" FOREIGN KEY ("PersonTypeId")
+    CONSTRAINT "GroupGrantPersonTypes_PersonTypes_fkey" FOREIGN KEY ("PersonTypeId")
         REFERENCES public."PersonTypes" ("PersonTypeId") MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
