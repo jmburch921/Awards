@@ -1,6 +1,6 @@
 
 
-CREATE USER "AwardsDbUser" PASSWORD 'AwardsDbUser' WITH
+CREATE USER "Awards_Dev_User" PASSWORD 'Awards_Dev_User' WITH
   LOGIN
   NOSUPERUSER
   INHERIT
