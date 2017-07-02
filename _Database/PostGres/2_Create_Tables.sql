@@ -74,7 +74,8 @@ CREATE TABLE public."Persons"
     "PersonId" integer NOT NULL,
     "PersonTypeId" integer NOT NULL,
     "Name" character varying COLLATE pg_catalog."default",
-    "Surname" character varying COLLATE pg_catalog."default",    
+    "Surname" character varying COLLATE pg_catalog."default",     
+    "DomainLogin" character varying COLLATE pg_catalog."default",      
     "EMail" character varying COLLATE pg_catalog."default",    
     "InActiveDate" date,
     "InActive" bit(1),
@@ -90,7 +91,9 @@ WITH (
 TABLESPACE pg_default;
 
 
---Group setup , persons in the group , and what types of persons can be added to the group
+--Group setup , persons in the group , and what types of persons can be added to the group.
+--Groups gets created for groups and then the group type gets defined with roles and person types that can belong to the groups.
+--This enables the system to have different roles for different person types.
 CREATE TABLE public."GroupPersons"
 (
     "GroupPersonId" integer NOT NULL,
@@ -113,20 +116,57 @@ WITH (
 )
 TABLESPACE pg_default;
 
-CREATE TABLE public."GroupPersonTypes"
+CREATE TABLE public."GroupGrantPersonTypes"
 (
-    "GroupPersonTypeId" integer NOT NULL,
+    "GroupGrantPersonTypeId" integer NOT NULL,
     "GroupId" integer NOT NULL,
     "PersonTypeId" integer NOT NULL,
     "InActiveDate" date,
     "InActive" bit(1),
-    CONSTRAINT "GroupPersonTypes_pkey" PRIMARY KEY ("GroupPersonTypeId"),
-    CONSTRAINT "GroupPersonTypes_Groups_fkey" FOREIGN KEY ("GroupId")
+    CONSTRAINT "GroupGrantPersonTypes_pkey" PRIMARY KEY ("GroupGrantPersonTypeId"),
+    CONSTRAINT "GroupGrantPersonTypes_Groups_fkey" FOREIGN KEY ("GroupId")
         REFERENCES public."Groups" ("GroupId") MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION,
-    CONSTRAINT "GroupPersonTypes_PersonTypes_fkey" FOREIGN KEY ("PersonTypeId")
+    CONSTRAINT "GroupPersonGrantTypes_PersonTypes_fkey" FOREIGN KEY ("PersonTypeId")
         REFERENCES public."PersonTypes" ("PersonTypeId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+--Roles and persons in that roles
+CREATE TABLE public."Roles"
+(
+    "RoleId" integer NOT NULL,
+    "Name" character varying COLLATE pg_catalog."default",
+    "Description" character varying COLLATE pg_catalog."default",
+    "InActiveDate" date,
+    "InActive" bit(1),
+    CONSTRAINT "Roles_pkey" PRIMARY KEY ("RoleId")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+CREATE TABLE public."GroupGrantRoles"
+(
+    "GroupGrantRoleId" integer NOT NULL,
+    "GroupId" integer NOT NULL,
+    "RoleId" integer NOT NULL,
+    "InActiveDate" date,
+    "InActive" bit(1),
+    CONSTRAINT "GroupGrantRoles_pkey" PRIMARY KEY ("GroupGrantRoleId"),
+    CONSTRAINT "GroupGrantRoles_Groups_fkey" FOREIGN KEY ("GroupId")
+        REFERENCES public."Groups" ("GroupId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "GroupGrantRoles_PersonTypes_fkey" FOREIGN KEY ("RoleId")
+        REFERENCES public."Roles" ("RoleId") MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
