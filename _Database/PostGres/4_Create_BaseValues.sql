@@ -3,7 +3,8 @@ INSERT INTO public."ProgramAwardTypes"(
 	"ProgramAwardTypeId", "Name", "Description", "InActive", "InActiveDate")
 	VALUES (1, 'Personal', 'Personal award', '0', '1900-01-01'),
     (2, 'Group', 'Group award', '0', '1900-01-01'),
-    (3, 'Other', 'Other award', '0', '1900-01-01');
+    (3, 'Team', 'Group award', '0', '1900-01-01'),
+    (4, 'Other', 'Other award', '0', '1900-01-01');
 
 INSERT INTO public."GroupTypes"(
 	"GroupTypeId", "Name", "Description", "InActive", "InActiveDate")

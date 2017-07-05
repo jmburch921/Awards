@@ -209,34 +209,53 @@ WITH (
 )
 TABLESPACE pg_default;
 
-CREATE TABLE public."ProgramAwardTypes"
+CREATE TABLE public."BusinessProgramInformations"
 (
-    "ProgramAwardTypeId" integer NOT NULL,
+    "BusinessProgramInformationId" integer NOT NULL,
+    "BusinessProgramId" integer NOT NULL,
     "Name" character varying COLLATE pg_catalog."default",
     "Description" character varying COLLATE pg_catalog."default",
     "InActive" bit(1),
     "InActiveDate" date,    
-    CONSTRAINT "ProgramAwardTypes_pkey" PRIMARY KEY ("ProgramAwardTypeId")
+    CONSTRAINT "BusinessProgramInformations_pkey" PRIMARY KEY ("BusinessProgramInformationId"),
+    CONSTRAINT "BusinessProgramInformations_BusinessPrograms_fkey" FOREIGN KEY ("BusinessProgramId")
+        REFERENCES public."BusinessPrograms" ("BusinessProgramId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
 )
 WITH (
     OIDS = FALSE
 )
 TABLESPACE pg_default;
 
-CREATE TABLE public."BusinessProgramAwardTypes"
+CREATE TABLE public."ProgramEntityTypes"
 (
-    "BusinessProgramAwardTypeId" integer NOT NULL,
-    "BusinessProgramId" integer NOT NULL,
-    "ProgramAwardTypeId" integer NOT NULL,
+    "ProgramEntityTypeId" integer NOT NULL,
+    "Name" character varying COLLATE pg_catalog."default",
+    "Description" character varying COLLATE pg_catalog."default",
     "InActive" bit(1),
     "InActiveDate" date,    
-    CONSTRAINT "BusinessProgramAwardTypes_pkey" PRIMARY KEY ("BusinessProgramAwardTypeId"),
-    CONSTRAINT "BusinessProgramAwardTypes_BusinessPrograms_fkey" FOREIGN KEY ("BusinessProgramId")
+    CONSTRAINT "ProgramEntityTypes_pkey" PRIMARY KEY ("ProgramEntityTypeId")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+CREATE TABLE public."BusinessProgramEntityTypes"
+(
+    "BusinessProgramEntityTypeId" integer NOT NULL,
+    "BusinessProgramId" integer NOT NULL,
+    "ProgramEntityTypeId" integer NOT NULL,
+    "InActive" bit(1),
+    "InActiveDate" date,    
+    CONSTRAINT "BusinessProgramEntityTypes_pkey" PRIMARY KEY ("BusinessProgramEntityTypeId"),
+    CONSTRAINT "BusinessProgramEntityTypes_BusinessPrograms_fkey" FOREIGN KEY ("BusinessProgramId")
         REFERENCES public."BusinessPrograms" ("BusinessProgramId") MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION,
-    CONSTRAINT "BusinessProgramAwardTypes_ProgramAwardTypes_fkey" FOREIGN KEY ("ProgramAwardTypeId")
-        REFERENCES public."ProgramAwardTypes" ("ProgramAwardTypeId") MATCH SIMPLE
+    CONSTRAINT "BusinessProgramEntityTypes_ProgramEntityTypes_fkey" FOREIGN KEY ("ProgramEntityTypeId")
+        REFERENCES public."ProgramEntityTypes" ("ProgramEntityTypeId") MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
@@ -267,13 +286,6 @@ WITH (
 )
 TABLESPACE pg_default;
 
-
-
-
-
-
-
-
 CREATE TABLE public."PeriodTypes"
 (
     "PeriodTypeId" integer NOT NULL,
@@ -282,6 +294,52 @@ CREATE TABLE public."PeriodTypes"
     "InActive" bit(1),
     "InActiveDate" date,    
     CONSTRAINT "PeriodTypes_pkey" PRIMARY KEY ("PeriodTypeId")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+
+CREATE TABLE public."PeriodStatus"
+(
+    "PeriodStatuId" integer NOT NULL,
+    "Name" character varying COLLATE pg_catalog."default",
+    "Description" character varying COLLATE pg_catalog."default",
+    "InActive" bit(1),
+    "InActiveDate" date,    
+    CONSTRAINT "PeriodStatus_pkey" PRIMARY KEY ("PeriodStatuId")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+-- Create a link between the program and the award type for a period
+-- This allows group types to have different periods from other types in the same programme
+-- For example the group nominations can only be made in a ceratain date range near the nd of the period
+-- While other nominations can remain open
+CREATE TABLE public."BusinessProgramEntityTypePeriods"
+(
+    "BusinessProgramEntityTypePeriodId" integer NOT NULL,    
+    "BusinessProgramEntityTypeId" integer NOT NULL,
+    "PeriodTypeId" integer NOT NULL,
+    "PeriodStatuId" integer NOT NULL,
+    "InActive" bit(1),
+    "InActiveDate" date,    
+    CONSTRAINT "BusinessProgramEntityTypePeriods_pkey" PRIMARY KEY ("BusinessProgramEntityTypePeriodId"),
+    CONSTRAINT "BusinessProgramEntityTypePeriods_BusinessProgramEntityTypes_fkey" FOREIGN KEY ("BusinessProgramEntityTypeId")
+        REFERENCES public."BusinessProgramEntityTypes" ("BusinessProgramEntityTypeId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "BusinessProgramEntityTypePeriods_PeriodTypes_fkey" FOREIGN KEY ("PeriodTypeId")
+        REFERENCES public."PeriodTypes" ("PeriodTypeId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "BusinessProgramEntityTypePeriods_PeriodStatus_fkey" FOREIGN KEY ("PeriodStatuId")
+        REFERENCES public."PeriodStatus" ("PeriodStatuId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
 )
 WITH (
     OIDS = FALSE
