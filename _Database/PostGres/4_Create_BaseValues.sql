@@ -1,6 +1,6 @@
 
-INSERT INTO public."ProgramAwardTypes"(
-	"ProgramAwardTypeId", "Name", "Description", "InActive", "InActiveDate")
+INSERT INTO public."ProgramEntityTypes"(
+	"ProgramEntityTypeId", "Name", "Description", "InActive", "InActiveDate")
 	VALUES (1, 'Personal', 'Personal award', '0', '1900-01-01'),
     (2, 'Group', 'Group award', '0', '1900-01-01'),
     (3, 'Team', 'Group award', '0', '1900-01-01'),
