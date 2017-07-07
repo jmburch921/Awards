@@ -333,20 +333,20 @@ TABLESPACE pg_default;
 ALTER TABLE public."ProgramInformationAttributes" OWNER TO "Awards_Dev_User";
 
 --|| NO 5.3 ||--
-CREATE TABLE public."PeriodStatus"
+CREATE TABLE public."PeriodStatuses"
 (
-    "PeriodStatuId" integer NOT NULL,
+    "PeriodStatusId" integer NOT NULL,
     "Name" character varying COLLATE pg_catalog."default",
     "Description" character varying COLLATE pg_catalog."default",
     "InActive" bit(1),
     "InActiveDate" date,    
-    CONSTRAINT "PeriodStatus_pkey" PRIMARY KEY ("PeriodStatuId")
+    CONSTRAINT "PeriodStatuses_pkey" PRIMARY KEY ("PeriodStatusId")
 )
 WITH (
     OIDS = FALSE
 )
 TABLESPACE pg_default;
-ALTER TABLE public."PeriodStatus" OWNER TO "Awards_Dev_User";
+ALTER TABLE public."PeriodStatuses" OWNER TO "Awards_Dev_User";
 
 --|| NO 5.4 ||--
 CREATE TABLE public."PeriodTypes"
@@ -466,7 +466,7 @@ CREATE TABLE public."ProgramEntityTypePeriods"
 (
     "ProgramEntityTypePeriodId" integer NOT NULL,    
     "ProgramEntityTypeId" integer NOT NULL,    
-    "PeriodStatuId" integer NOT NULL,
+    "PeriodStatusId" integer NOT NULL,
     "PeriodTypeId" integer NOT NULL,
     "InActive" bit(1),
     "InActiveDate" date,    
@@ -475,8 +475,8 @@ CREATE TABLE public."ProgramEntityTypePeriods"
         REFERENCES public."ProgramEntityTypes" ("ProgramEntityTypeId") MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION,
-    CONSTRAINT "ProgramEntityTypePeriods_PeriodStatus_fkey" FOREIGN KEY ("PeriodStatuId")
-        REFERENCES public."PeriodStatus" ("PeriodStatuId") MATCH SIMPLE
+    CONSTRAINT "ProgramEntityTypePeriods_PeriodStatuses_fkey" FOREIGN KEY ("PeriodStatusId")
+        REFERENCES public."PeriodStatuses" ("PeriodStatusId") MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION,
     CONSTRAINT "ProgramEntityTypePeriods_PeriodTypes_fkey" FOREIGN KEY ("PeriodTypeId")
