@@ -20,7 +20,7 @@ CREATE TABLE public."PersonInformationAttributes"
     "Description" character varying COLLATE pg_catalog."default",
     "InActiveDate" date,
     "InActive" bit(1),
-    CONSTRAINT "PersonInformationAttributes_pkey" PRIMARY KEY ("PersonInformationAttributeId"),
+    CONSTRAINT "PersonInformationAttributes_pkey" PRIMARY KEY ("PersonInformationAttributeId")
 )
 WITH (
     OIDS = FALSE
@@ -516,14 +516,19 @@ ALTER TABLE public."ProgramCriteriaTypes" OWNER TO "Awards_Dev_User";
 CREATE TABLE public."ProgramCriterias"
 (
     "ProgramCriteriaId" integer NOT NULL,    
-    "ProgramCriteriaTypeId" integer NOT NULL,    
+    "ProgramCriteriaTypeId" integer NOT NULL,   
+    "ProgramCriteriaParentId" integer NULL,   
     "Name" integer NOT NULL,
     "Description" integer NOT NULL,
     "InActive" bit(1),
     "InActiveDate" date,    
-    CONSTRAINT "ProgramCriteriaTypes_pkey" PRIMARY KEY ("ProgramCriteriaTypeId"),
-    CONSTRAINT "ProgramCriteriaTypes_ProgramCriteriaTypes_fkey" FOREIGN KEY ("ProgramCriteriaTypeId")
+    CONSTRAINT "ProgramCriterias_pkey" PRIMARY KEY ("ProgramCriteriaId"),
+    CONSTRAINT "ProgramCriterias_ProgramCriteriaTypes_fkey" FOREIGN KEY ("ProgramCriteriaTypeId")
         REFERENCES public."ProgramCriteriaTypes" ("ProgramCriteriaTypeId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "ProgramCriterias_ProgramCriterias_fkey" FOREIGN KEY ("ProgramCriteriaParentId")
+        REFERENCES public."ProgramCriterias" ("ProgramCriteriaId") MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
@@ -531,4 +536,277 @@ WITH (
     OIDS = FALSE
 )
 TABLESPACE pg_default;
-ALTER TABLE public."ProgramCriteriaTypes" OWNER TO "Awards_Dev_User";
+ALTER TABLE public."ProgramCriterias" OWNER TO "Awards_Dev_User";
+
+--||====================||--
+--|| ASCRIPTION TABLES  ||--
+--||====================||--
+-- Ascription has base tables for:
+--||========================||--
+--|| BASE ASCRIPTION TABLES ||--
+--||========================||--
+--|| NO 7.1 ||--
+CREATE TABLE public."AscriptionStatuses"
+(
+    "AscriptionStatusId" integer NOT NULL,
+    "Name" character varying COLLATE pg_catalog."default",
+    "Description" character varying COLLATE pg_catalog."default",
+    "InActive" bit(1),
+    "InActiveDate" date,    
+    CONSTRAINT "AscriptionStatuses_pkey" PRIMARY KEY ("AscriptionStatusId")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+ALTER TABLE public."AscriptionStatuses" OWNER TO "Awards_Dev_User";
+
+--|| NO 7.2 ||--
+CREATE TABLE public."AscriptionTypes"
+(
+    "AscriptionTypeId" integer NOT NULL,
+    "Name" character varying COLLATE pg_catalog."default",
+    "Description" character varying COLLATE pg_catalog."default",
+    "InActive" bit(1),
+    "InActiveDate" date,    
+    CONSTRAINT "AscriptionTypes_pkey" PRIMARY KEY ("AscriptionTypeId")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+ALTER TABLE public."AscriptionTypes" OWNER TO "Awards_Dev_User";
+
+--||===========================||--
+--|| PROGRAM ASCRIPTION TABLES ||--
+--||===========================||--
+--|| NO 8.1 ||--
+CREATE TABLE public."ProgramAscriptionTypes"
+(
+    "ProgramAscriptionTypeId" integer NOT NULL,    
+    "AscriptionTypeId" integer NOT NULL,   
+    "PeriodTypeId" integer NULL,   
+    "InActive" bit(1),
+    "InActiveDate" date,    
+    CONSTRAINT "ProgramAscriptionTypes_pkey" PRIMARY KEY ("ProgramAscriptionTypeId"),
+    CONSTRAINT "ProgramAscriptionTypes_AscriptionTypes_fkey" FOREIGN KEY ("AscriptionTypeId")
+        REFERENCES public."AscriptionTypes" ("AscriptionTypeId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "ProgramAscriptionTypes_PeriodTypes_fkey" FOREIGN KEY ("PeriodTypeId")
+        REFERENCES public."PeriodTypes" ("PeriodTypeId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+ALTER TABLE public."ProgramAscriptionTypes" OWNER TO "Awards_Dev_User";
+
+--|| NO 8.2 ||--
+CREATE TABLE public."ProgramAscriptionTypeStatusRoles"
+(
+    "ProgramAscriptionTypeStatusRoleId" integer NOT NULL,    
+    "ProgramAscriptionTypeId" integer NOT NULL,   
+    "AscriptionStatusId" integer NULL,     
+    "RoleId" integer NULL,   
+    "InActive" bit(1),
+    "InActiveDate" date,    
+    CONSTRAINT "ProgramAscriptionTypeStatusRoles_pkey" PRIMARY KEY ("ProgramAscriptionTypeStatusRoleId"),
+    CONSTRAINT "ProgramAscriptionTypeStatusRoles_ProgramAscriptionTypes_fkey" FOREIGN KEY ("ProgramAscriptionTypeId")
+        REFERENCES public."ProgramAscriptionTypes" ("ProgramAscriptionTypeId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "ProgramAscriptionTypeStatusRoles_AscriptionStatuses_fkey" FOREIGN KEY ("AscriptionStatusId")
+        REFERENCES public."AscriptionStatuses" ("AscriptionStatusId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "ProgramAscriptionTypeStatusRoles_Roles_fkey" FOREIGN KEY ("RoleId")
+        REFERENCES public."Roles" ("RoleId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+ALTER TABLE public."ProgramAscriptionTypeStatusRoles" OWNER TO "Awards_Dev_User";
+
+--||===================||--
+--|| ASCRIPTION TABLES ||--
+--||===================||--
+--|| NO 9.1 ||--
+CREATE TABLE public."AscriptionParents"
+(
+    "AscriptionParentId" integer NOT NULL,    
+    "TeamName"  character varying COLLATE pg_catalog."default", 
+    "InActive" bit(1),
+    "InActiveDate" date,    
+    CONSTRAINT "AscriptionParents_pkey" PRIMARY KEY ("AscriptionParentId")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+ALTER TABLE public."AscriptionParents" OWNER TO "Awards_Dev_User";
+
+--|| NO 9.2 ||--
+CREATE TABLE public."Ascriptions"
+(
+    "AscriptionId" integer NOT NULL,    
+    "AscriptionParentId" integer NOT NULL,   
+    "AscriptionStatusId" integer NULL,     
+    "ApprovalLevelRoleId" integer NULL,      
+    "AscriptionTypeId" integer NULL,         
+    "PersonNominatorId" integer NULL,         
+    "PersonNomineeId" integer NULL,   
+    "InActive" bit(1),
+    "InActiveDate" date,    
+    CONSTRAINT "Ascriptions_pkey" PRIMARY KEY ("AscriptionId"),
+    CONSTRAINT "Ascriptions_AscriptionParents_fkey" FOREIGN KEY ("AscriptionParentId")
+        REFERENCES public."AscriptionParents" ("AscriptionParentId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "Ascriptions_AscriptionStatuses_fkey" FOREIGN KEY ("AscriptionStatusId")
+        REFERENCES public."AscriptionStatuses" ("AscriptionStatusId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "Ascriptions_ApprovalLevelRoles_fkey" FOREIGN KEY ("ApprovalLevelRoleId")
+        REFERENCES public."Roles" ("RoleId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "Ascriptions_AscriptionTypes_fkey" FOREIGN KEY ("AscriptionTypeId")
+        REFERENCES public."AscriptionTypes" ("AscriptionTypeId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "Ascriptions_PersonsNominator_fkey" FOREIGN KEY ("PersonNominatorId")
+        REFERENCES public."Persons" ("PersonId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "Ascriptions_PersonsNominee_fkey" FOREIGN KEY ("PersonNomineeId")
+        REFERENCES public."Persons" ("PersonId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+ALTER TABLE public."Ascriptions" OWNER TO "Awards_Dev_User";
+
+--|| NO 9.3 ||--
+CREATE TABLE public."AscriptionCriterias"
+(
+    "AscriptionCriteriaId" integer NOT NULL,  
+    "AscriptionId" integer NOT NULL,    
+    "ProgramCriteriaId" integer NOT NULL,    
+    "InActive" bit(1),
+    "InActiveDate" date,    
+    CONSTRAINT "AscriptionCriterias_pkey" PRIMARY KEY ("AscriptionCriteriaId"),
+    CONSTRAINT "AscriptionCriterias_Ascriptions_fkey" FOREIGN KEY ("AscriptionId")
+        REFERENCES public."Ascriptions" ("AscriptionId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "AscriptionCriterias_ProgramCriterias_fkey" FOREIGN KEY ("ProgramCriteriaId")
+        REFERENCES public."ProgramCriterias" ("ProgramCriteriaId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+ALTER TABLE public."AscriptionCriterias" OWNER TO "Awards_Dev_User";
+
+--|| NO 9.4 ||--
+CREATE TABLE public."AscriptionReasons"
+(
+    "AscriptionReasonId" integer NOT NULL,  
+    "AscriptionCriteriaId" integer NOT NULL,    
+    "ReasonText"  character varying COLLATE pg_catalog."default",   
+    "InActive" bit(1),
+    "InActiveDate" date,    
+    CONSTRAINT "AscriptionReasons_pkey" PRIMARY KEY ("AscriptionReasonId"),
+    CONSTRAINT "AscriptionReasons_AscriptionCriterias_fkey" FOREIGN KEY ("AscriptionCriteriaId")
+        REFERENCES public."AscriptionCriterias" ("AscriptionCriteriaId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+ALTER TABLE public."AscriptionReasons" OWNER TO "Awards_Dev_User";
+
+
+--|| NO 9.5 ||--
+CREATE TABLE public."AscriptionMailNotifications"
+(
+    "AscriptionMailNotificationId" integer NOT NULL,  
+    "AscriptionId" integer NOT NULL,    
+    "MailToPersonId"  character varying COLLATE pg_catalog."default",    
+    "Subject"  character varying COLLATE pg_catalog."default",     
+    "Body"  character varying COLLATE pg_catalog."default",  
+    CONSTRAINT "AscriptionMailNotifications_pkey" PRIMARY KEY ("AscriptionMailNotificationId"),
+    CONSTRAINT "AscriptionMailNotifications_Ascriptions_fkey" FOREIGN KEY ("AscriptionId")
+        REFERENCES public."Ascriptions" ("AscriptionId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+ALTER TABLE public."AscriptionMailNotifications" OWNER TO "Awards_Dev_User";
+
+--|| NO 9.6 ||--
+CREATE TABLE public."AscriptionNotes"
+(
+    "AscriptionNoteId" integer NOT NULL,  
+    "AscriptionId" integer NOT NULL,    
+    "Details"  character varying COLLATE pg_catalog."default",    
+     "CreateDate" date,  
+    "InActive" bit(1),
+    "InActiveDate" date,    
+    CONSTRAINT "AscriptionNotes_pkey" PRIMARY KEY ("AscriptionNoteId"),
+    CONSTRAINT "AscriptionNotes_Ascriptions_fkey" FOREIGN KEY ("AscriptionId")
+        REFERENCES public."Ascriptions" ("AscriptionId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+ALTER TABLE public."AscriptionNotes" OWNER TO "Awards_Dev_User";
+
+--|| NO 9.7 ||--
+CREATE TABLE public."AscriptionAudits"
+(
+    "AscriptionAuditId" integer NOT NULL,  
+    "AscriptionId" integer NOT NULL,      
+    "FromAscriptionStatusId" integer NOT NULL,      
+    "ToAscriptionStatusId" integer NOT NULL,    
+    "Details"  character varying COLLATE pg_catalog."default",    
+    "CreateDate" date,  
+    CONSTRAINT "AscriptionAudits_pkey" PRIMARY KEY ("AscriptionAuditId"),
+    CONSTRAINT "AscriptionAudits_Ascriptions_fkey" FOREIGN KEY ("AscriptionId")
+        REFERENCES public."Ascriptions" ("AscriptionId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "AscriptionAudits_AscriptionStatusesStatusFrom_fkey" FOREIGN KEY ("FromAscriptionStatusId")
+        REFERENCES public."AscriptionStatuses" ("AscriptionStatusId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "AscriptionAudits_AscriptionStatusesStatusTo_fkey" FOREIGN KEY ("ToAscriptionStatusId")
+        REFERENCES public."AscriptionStatuses" ("AscriptionStatusId") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+ALTER TABLE public."AscriptionAudits" OWNER TO "Awards_Dev_User";
+
