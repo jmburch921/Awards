@@ -2,7 +2,7 @@ var express = require('express');
 var webserver = express();
 var port = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
-   var path = require('path'); 
+var path = require('path'); 
 
     
 //middleware
@@ -13,7 +13,10 @@ webserver.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/index.html'));
 });
 webserver.get('/persons/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/client/persons/client.html'));
+    res.sendFile(path.join(__dirname + '/client/awardPersons/people.html'));
+});
+webserver.get('/about/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/client/website/about.html'));
 });
 
 //1.1 Db table
