@@ -10,10 +10,12 @@ exports.create_a_groupType = function (req, res) {
     var name = req.body.name;
     var description = req.body.description;
     var dataPost = require('../dataAccess/dataPost');
-    dataPost(req, res,
-        'INSERT INTO public."GroupTypes"("GroupTypeId", "Name", "Description", "InActive", "InActiveDate") ' +
+    dataPost('INSERT INTO public."GroupTypes"("GroupTypeId", "Name", "Description", "InActive", "InActiveDate") ' +
         'VALUES' +
-        '(' + groupTypesId + ',\'' + name + '\' ,\'' + description + '\',\'0\', \'1900-01-01\')');
+        '(' + groupTypesId + ',\'' + name + '\' ,\'' + description + '\',\'0\', \'1900-01-01\')',
+        function (results) {
+            res.send(results);
+        });
 };
 
 exports.read_a_groupType = function (req, res) {
@@ -30,19 +32,23 @@ exports.update_a_groupType = function (req, res) {
     var description = req.body.description;
     var inactive = req.body.inactive;
     var inactiveDate = req.body.inactiveDate;
-    var dataPut = require('../dataAccess/dataGet');
-    dataPut(req, res,
-        ' UPDATE public."GroupTypes" ' +
+    var dataPut = require('../dataAccess/dataPut');
+    dataPut(' UPDATE public."GroupTypes" ' +
         'SET ' +
         ' "Name"=\'' + name + '\', ' +
         ' "Description"=\'' + description + '\', ' +
         ' "InActive"=\'' + inactive + '\', ' +
         ' "InActiveDate"=\'' + inactiveDate + '\' ' +
-        'where "GroupTypeId" = ' + id);
+        'where "GroupTypeId" = ' + id,
+        function (results) {
+            res.send(results);
+        });
 };
 
 exports.delete_a_groupType = function (req, res) {
     var id = req.params.groupTypesId;
-    var dataDelete = require('../dataAccess/dataGet');
-    dataDelete(req, res, 'DELETE FROM public."GroupTypes" where "GroupTypeId" = ' + id);
+    var dataDelete = require('../dataAccess/dataDelete');
+    dataDelete('DELETE FROM public."GroupTypes" where "GroupTypeId" = ' + id, function (results) {
+        res.send(results);
+    });
 };

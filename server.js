@@ -9,6 +9,13 @@ debugger;
 webserver.use(bodyParser.urlencoded({ extended: true }));
 webserver.use(bodyParser.json());
 
+
+
+
+var personInformationAttributesRoutes = require('./api/routes/personInformationAttributesRoutes');
+personInformationAttributesRoutes(webserver);
+
+
 var personsRoutes = require('./api/routes/personsRoutes');
 personsRoutes(webserver);
 
