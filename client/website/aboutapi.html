@@ -27,7 +27,7 @@
 
 <body>
     <!-- NAV START -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar  navbar-inverse navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -38,7 +38,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-                <a class="navbar-brand" href="/home" ><img src="images/ribbon24x24.png"/></a>
+                <a class="navbar-brand" href="/home"><img src="images/ribbon24x24.png"/></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -66,20 +66,27 @@
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3><img src="images/trophy36x36.png"/>&nbsp;The API layer</h3>
+                <h3><img src="images/trophy36x36.png" />&nbsp;The API layer</h3>
             </div>
             <div class="panel-body">
-                <div style="padding:15px;"> 
+                <div style="padding:15px;">
                     <div class="row"><b>The api layer is in development at the moment.</b></div>
                     <div class="row">There will be daily deploys as the application progresses.</div>
                     <div class="row">All the api's are tested on localhost:3000.</div>
                     <div class="row">The database that is used is a postgres 9.6, and can be at <a href="https://www.postgresql.org/">https://www.postgresql.org/</a></div>
                     <div class="row">
-                        <h4><span class="glyphicon glyphicon-cog"></span>&nbsp;REST API Database CRUDs</h4>
+                        <h4>REST API Database CRUDs</h4>
                     </div>
                     <div class="row">The following tables has basic CRUD apis added.</div>
                     <ul>
                         <li>EmploymentTypes</li>
+                        <ul>
+                            <li>GET : /EmploymentTypes</li>
+                            <li>GET : /EmploymentTypes/1</li>
+                            <li>PUT : /EmploymentTypes/1 [{"name":"JSonPut","description":"This was added by a json put","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li>POST : /EmploymentTypes [{"employmentTypeId":"5","name":"JSon","description":"This was added by a json post"}]</li>
+                            <li>DELETE : /EmploymentTypes/1</li>
+                        </ul>
                         <li>GroupTypes</li>
                         <li>IdentifierTypes</li>
                         <li>PersonEmploymentTypes</li>
