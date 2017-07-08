@@ -20,6 +20,12 @@ employmentTypes(webserver);
 //1.3 Db table
 var personTypes = require('./api/routes/personTypesRoutes');
 personTypes(webserver);
+//1.4 Db table
+var identifierTypes = require('./api/routes/identifierTypesRoutes');
+identifierTypes(webserver);
+//1.5 Db table
+var roles = require('./api/routes/rolesRoutes');
+roles(webserver);
 
 
 
