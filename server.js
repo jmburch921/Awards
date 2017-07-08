@@ -15,6 +15,10 @@ webserver.use(bodyParser.json());
 var personInformationAttributesRoutes = require('./api/routes/personInformationAttributesRoutes');
 personInformationAttributesRoutes(webserver);
 
+var employmentTypes = require('./api/routes/employmentTypesRoutes');
+employmentTypes(webserver);
+
+
 
 var personsRoutes = require('./api/routes/personsRoutes');
 personsRoutes(webserver);
