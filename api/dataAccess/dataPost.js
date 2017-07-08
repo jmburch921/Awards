@@ -8,6 +8,7 @@ module.exports = function (queryString, callback) {
         port: 5432,
     });
     var jsonReturnResult = "";
+    console.log(queryString);
     client.connect(function (err) {
         if (err) {
             console.error('CONNECTION ERROR...');
