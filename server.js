@@ -11,12 +11,15 @@ webserver.use(bodyParser.json());
 
 
 
-
+//1.1 Db table
 var personInformationAttributesRoutes = require('./api/routes/personInformationAttributesRoutes');
 personInformationAttributesRoutes(webserver);
-
+//1.2 Db table
 var employmentTypes = require('./api/routes/employmentTypesRoutes');
 employmentTypes(webserver);
+//1.3 Db table
+var personTypes = require('./api/routes/personTypesTypesRoutes');
+personTypes(webserver);
 
 
 
