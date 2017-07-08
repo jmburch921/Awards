@@ -1,7 +1,7 @@
 'use strict';
 module.exports = function(webserver) {
     var controller = require('../controllers/personTypesController');
-
+ 
     webserver.route('/PersonTypes')
         .post(controller.create_a_personType)
         .get(controller.get_all_personTypes);
