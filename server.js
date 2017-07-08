@@ -50,6 +50,9 @@ personEmploymentTypesRoutes(webserver);
 //2.3 Db table
 var personInformationAttributeValuesRoutes = require('./api/routes/personInformationAttributeValuesRoutes');
 personInformationAttributeValuesRoutes(webserver);
+//2.4 Db table
+var personRolesRoutes = require('./api/routes/personRolesRoutes');
+personRolesRoutes(webserver);
 
 
 
