@@ -9,15 +9,21 @@ var path = require('path');
 webserver.use(bodyParser.urlencoded({ extended: true }));
 webserver.use(bodyParser.json());
 
+
+
+
 webserver.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/index.html'));
 });
-webserver.get('/persons/', function(req, res) {
+webserver.get('/people/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/awardPersons/people.html'));
 });
 webserver.get('/about/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/website/about.html'));
 });
+
+
+
 
 //1.1 Db table
 var personInformationAttributesRoutes = require('./api/routes/personInformationAttributesRoutes');
@@ -41,7 +47,9 @@ personsRoutes(webserver);
 //2.2 Db table
 var personEmploymentTypesRoutes = require('./api/routes/personEmploymentTypesRoutes');
 personEmploymentTypesRoutes(webserver);
-
+//2.3 Db table
+var personInformationAttributeValuesRoutes = require('./api/routes/personInformationAttributeValuesRoutes');
+personInformationAttributeValuesRoutes(webserver);
 
 
 
