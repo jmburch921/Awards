@@ -9,7 +9,9 @@ var path = require('path');
 webserver.use(bodyParser.urlencoded({ extended: true }));
 webserver.use(bodyParser.json());
 
-
+//static folders to be able to point to css, js etc files in a directory
+webserver.use("/css", express.static(__dirname + '/client/css'));
+webserver.use("/images", express.static(__dirname + '/client/content/images'));
 
 //web site navigation
 webserver.get('/', function(req, res) {
@@ -32,6 +34,9 @@ webserver.get('/about/', function(req, res) {
 });
 webserver.get('/contactus/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/website/contactus.html'));
+});
+webserver.get('/aboutapi/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/client/website/aboutapi.html'));
 });
 
 
