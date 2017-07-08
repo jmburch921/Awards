@@ -11,20 +11,32 @@ webserver.use(bodyParser.json());
 
 
 
-
+//web site navigation
 webserver.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/index.html'));
 });
+webserver.get('/home/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/client/index.html'));
+});
 webserver.get('/people/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/client/awardPersons/people.html'));
+    res.sendFile(path.join(__dirname + '/client/awardPersons/peopleManager.html'));
+});
+webserver.get('/programmes/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/client/awardPrograms/programsManager.html'));
+});
+webserver.get('/ascriptions/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/client/awardAscriptions/ascriptionsManager.html'));
 });
 webserver.get('/about/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/website/about.html'));
 });
+webserver.get('/contactus/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/client/website/contactus.html'));
+});
 
 
 
-
+//API's
 //1.1 Db table
 var personInformationAttributesRoutes = require('./api/routes/personInformationAttributesRoutes');
 personInformationAttributesRoutes(webserver);
