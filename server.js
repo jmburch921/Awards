@@ -18,7 +18,7 @@ personInformationAttributesRoutes(webserver);
 var employmentTypes = require('./api/routes/employmentTypesRoutes');
 employmentTypes(webserver);
 //1.3 Db table
-var personTypes = require('./api/routes/personTypesTypesRoutes');
+var personTypes = require('./api/routes/personTypesRoutes');
 personTypes(webserver);
 
 
