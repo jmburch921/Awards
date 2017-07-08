@@ -2,14 +2,19 @@ var express = require('express');
 var webserver = express();
 var port = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
-    
-debugger;
+   var path = require('path'); 
+
     
 //middleware
 webserver.use(bodyParser.urlencoded({ extended: true }));
 webserver.use(bodyParser.json());
 
-
+webserver.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/client/index.html'));
+});
+webserver.get('/persons/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/client/persons/client.html'));
+});
 
 //1.1 Db table
 var personInformationAttributesRoutes = require('./api/routes/personInformationAttributesRoutes');
