@@ -9,24 +9,24 @@
                     </div>
                     <div class="row">The following tables has basic CRUD apis added.</div>
                     <ul>
-                        <li>1.1.<span style="color:#424005;font-weight:bold;">PersonInformationAttributes</span></li>
-<ul>
+                        <li>1.1.<span style="color:#424005;font-weight:bold;">PersonInformationAttributes</span>
+                            <ul>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/PersonInformationAttributes</li>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/PersonInformationAttributes/1</li>
                             <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/PersonInformationAttributes/1 [{"name":"nameValue","description":"descriptionValue","inactive":"1","inactiveDate":"1900-12-31"}]</li>
                             <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/PersonInformationAttributes [{"name":"nameValue","description":"descriptionValue"}]</li>
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/PersonInformationAttributes/1</li>
                         </ul>
-
-                        <li>1.2.<span style="color:#424005;font-weight:bold;">EmploymentTypes</span></li>
-<ul>
-                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/EmploymentTypes</li>
-                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/EmploymentTypes/1</li>
-                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/EmploymentTypes/1 [{"name":"nameValue","description":"descriptionValue","inactive":"1","inactiveDate":"1900-12-31"}]</li>
-                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/EmploymentTypes [{"name":"nameValue","description":"descriptionValue"}]</li>
-                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/EmploymentTypes/1</li>
-                        </ul>
-
+                        </li>
+                        <li>1.2.<span style="color:#424005;font-weight:bold;">EmploymentTypes</span>
+                            <ul>
+                                <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/EmploymentTypes</li>
+                                <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/EmploymentTypes/1</li>
+                                <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/EmploymentTypes/1 [{"name":"nameValue","description":"descriptionValue","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                                <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/EmploymentTypes [{"name":"nameValue","description":"descriptionValue"}]</li>
+                                <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/EmploymentTypes/1</li>
+                            </ul>
+</li>
                         <li>1.3.<span style="color:#424005;font-weight:bold;">PersonTypes</span></li>
 <ul>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/PersonTypes</li>
@@ -119,7 +119,7 @@
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/Groups/1</li>
                         </ul>
 
-                        <li>4.2.<span style="color:#424005;font-weight:bold;">GroupOfPersons</span>
+                        <li>4.2.<span style="color:#424005;font-weight:bold;">GroupOfPersons</span></li>
 <ul>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/GroupOfPersons</li>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/GroupOfPersons/1</li>
@@ -127,7 +127,7 @@
                             <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/GroupOfPersons [{"groupId":"2","personId":"1"}]</li>
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/GroupOfPersons/1</li>
                         </ul>
-</li>
+
 
 
 
