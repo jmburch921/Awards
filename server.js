@@ -108,6 +108,12 @@ programInformationAttributeValuesRoutes(webserver);
 //6.4 Db table
 var programEntityTypesRoutes = require('./api/routes/programEntityTypesRoutes');
 programEntityTypesRoutes(webserver);
+//6.5 Db table
+var programEntityTypePeriodsRoutes = require('./api/routes/programEntityTypePeriodsRoutes');
+programEntityTypePeriodsRoutes(webserver);
+//6.6 Db table
+var programCriteriaTypesRoutes = require('./api/routes/programCriteriaTypesRoutes');
+programCriteriaTypesRoutes(webserver);
 
 
 

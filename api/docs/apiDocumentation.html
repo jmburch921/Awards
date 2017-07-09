@@ -295,6 +295,26 @@
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/ProgramEntityTypes/1</li>
                         </ul>
 
+                        <li>6.5.<span style="color:#424005;font-weight:bold;">ProgramEntityTypePeriods</span></li>
+                        <ul> <b> <small><i>This table contains the values of the attribues of the program's information..<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramEntityTypePeriods</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramEntityTypePeriods/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/ProgramEntityTypePeriods/1 [{"programEntityTypeId":"1","periodStatusId":"1","periodTypeId":"1","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/ProgramEntityTypePeriods [{"programEntityTypeId":"1","periodStatusId":"1","periodTypeId":"1"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/ProgramEntityTypePeriods/1</li>
+                        </ul>
+
+                        <li>6.6.<span style="color:#424005;font-weight:bold;">ProgramCriteriaTypes</span></li>
+                        <ul> <b> <small><i>This table contains the values of the attribues of the program's information..<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramCriteriaTypes</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramCriteriaTypes/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/ProgramCriteriaTypes/1 [{"programEntityTypeId":"1","name":"JSon","description":"This was added by a json post","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/ProgramCriteriaTypes [{"programEntityTypeId":"1","name":"JSon","description":"This was added by a json post"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/ProgramCriteriaTypes/1</li>
+                        </ul>
+
                     </ul>
                 </div>
             </div>

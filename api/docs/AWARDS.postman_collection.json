@@ -1231,6 +1231,85 @@
 			]
 		},
 		{
+			"name": "ProgramEntityTypePeriods",
+			"description": "",
+			"item": [
+				{
+					"name": "ProgramEntityTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramEntityTypePeriods",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramEntityTypePeriods/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramEntityTypePeriods/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramEntityTypePeriods",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramEntityTypePeriods",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"programEntityTypeId\":\"1\",\n\"periodStatusId\":\"1\",\n\"periodTypeId\":\"1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramEntityTypePeriods/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramEntityTypePeriods/3",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramEntityTypePeriods/2",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramEntityTypePeriods/2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"programEntityTypeId\":\"1\",\n\"periodStatusId\":\"1\",\n\"periodTypeId\":\"1\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "ProgramEntityTypes",
 			"description": "",
 			"item": [
