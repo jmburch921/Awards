@@ -162,6 +162,6 @@ ascriptionNotesRoutes(webserver);
 var ascriptionAuditsRoutes = require('./api/routes/ascriptionAuditsRoutes');
 ascriptionAuditsRoutes(webserver);
 
-
+//Listen on port number
 webserver.listen(port);
 console.log('RESTful API server started on: ' + port);

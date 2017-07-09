@@ -1,3 +1,15 @@
+
+
+
+
+The appication consists of 3 seperate parts.<br/>
+The first part is the website<br/>
+The second is the API layer<br/>
+And the third part is the pages or SPA's for each page<br/>
+
+
+
+
 <body style="font-size:8px;">
     <div class="row"><b>The api layer is in development at the moment.</b></div>
     <div class="row">There will be daily deploys as the application progresses.</div>
