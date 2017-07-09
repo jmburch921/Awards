@@ -8,6 +8,106 @@
 	},
 	"item": [
 		{
+			"name": "AscriptionAudits",
+			"description": "",
+			"item": [
+				{
+					"name": "AscriptionAudits",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionAudits",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionAudits/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionAudits/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionAudits",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionAudits",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"ascriptionId\":\"1\",\n\"fromAscriptionStatusId\":\"1\",\n\"toAscriptionStatusId\":\"1\",\n\"details\":\"1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionAudits/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionAudits/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionAudits/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionAudits/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"ascriptionId\":\"1\",\n\"fromAscriptionStatusId\":\"1\",\n\"toAscriptionStatusId\":\"1\",\n\"details\":\"1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "AscriptionCriterias",
 			"description": "",
 			"item": [
