@@ -8,6 +8,106 @@
 	},
 	"item": [
 		{
+			"name": "AscriptionCriterias",
+			"description": "",
+			"item": [
+				{
+					"name": "AscriptionCriterias",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionCriterias",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionCriterias/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionCriterias/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionCriterias",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionCriterias",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"ascriptionId\":\"1\",\n\"programCriteriaId\":\"1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionCriterias/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionCriterias/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionCriterias/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionCriterias/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"ascriptionId\":\"1\",\n\"programCriteriaId\":\"1\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "AscriptionParents",
 			"description": "",
 			"item": [
@@ -365,7 +465,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\"ascriptionParentId\":\"1\",\n\"ascriptionStatusId\":\"1\",\n\"approvalLevelRoleId\":\"1\",\n\"ascriptionTypeId\":\"1\",\n\"personNominatorId\":\"1\",\n\"personNomineeId\":\"1\"\n}"
+							"raw": "{\n\"ascriptionParentId\":null,\n\"ascriptionStatusId\":\"1\",\n\"approvalLevelRoleId\":\"1\",\n\"ascriptionTypeId\":\"1\",\n\"personNominatorId\":\"1\",\n\"personNomineeId\":\"1\"\n}"
 						},
 						"description": ""
 					},

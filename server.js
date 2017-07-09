@@ -139,6 +139,9 @@ ascriptionParentsRoutes(webserver);
 //9.2 Db table
 var ascriptionsRoutes = require('./api/routes/ascriptionsRoutes');
 ascriptionsRoutes(webserver);
+//9.3 Db table
+var ascriptionCriteriasRoutes = require('./api/routes/ascriptionCriteriasRoutes');
+ascriptionCriteriasRoutes(webserver);
 
 
 

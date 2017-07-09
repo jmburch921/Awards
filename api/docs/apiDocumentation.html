@@ -74,9 +74,21 @@
                     <div class="row">There will be daily deploys as the application progresses.</div>
                     <div class="row">All the api's are tested on localhost:3000.</div>
                     <div class="row">The database that is used is a postgres 9.6, and can be at <a href="https://www.postgresql.org/">https://www.postgresql.org/</a></div>
-                    <div class="row">
-                        <h4>REST API Database CRUDs</h4>
-                    </div>
+
+                </div>
+            </div>
+            <div class="panel-footer">
+                This document will be updated as i continue to develop the system..
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3><img src="../images/trophy36x36.png" />&nbsp;REST API Database CRUDs</h3>
+            </div>
+            <div class="panel-body">
+                <div style="padding:5px;">
                     <div class="row">The following tables has basic CRUD apis added.</div>
                     <ul>
                         <li>1.1.<span style="color:#424005;font-weight:bold;">PersonInformationAttributes</span></li>
@@ -381,9 +393,11 @@
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramAscriptionTypes</li>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramAscriptionTypes/1</li>
                             <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/ProgramAscriptionTypes/1
-                                [{"ascriptionTypeId":"1","periodTypeId":"1","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                                [{"ascriptionTypeId":"1","periodTypeId":"1","inactive":"1","inactiveDate":"1900-12-31"}]
+                            </li>
                             <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/ProgramAscriptionTypes
-                                [{"ascriptionTypeId":"1","periodTypeId":"1"}]</li>
+                                [{"ascriptionTypeId":"1","periodTypeId":"1"}]
+                            </li>
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/ProgramAscriptionTypes/1</li>
                         </ul>
 
@@ -404,11 +418,30 @@
                         Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionParents</li>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionParents/1</li>
-                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/AscriptionParents/1 [{"ascriptionParentId":null,"ascriptionStatusId":"1","approvalLevelRoleId":"1","ascriptionTypeId":"1","personNominatorId":"1","personNomineeId":"1",<br/>"inactive":"1","inactiveDate":"1900-12-31"}]</li>
-                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/AscriptionParents [{"ascriptionParentId":null,<br/>"ascriptionStatusId":"1","approvalLevelRoleId":"1","ascriptionTypeId":"1","personNominatorId":"1","personNomineeId":"1"}]</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/AscriptionParents/1 [{"teamName":"nameValue","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/AscriptionParents [{"teamName":"nameValue"}]</li>
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/AscriptionParents/1</li>
                         </ul>
 
+                        <li>9.2.<span style="color:#424005;font-weight:bold;">Ascriptions</span></li>
+                        <ul> <b> <small><i>The ascription that one person makes for another entity or entities.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/Ascriptions</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/Ascriptions/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/Ascriptions/1 [{"ascriptionParentId":null,"ascriptionStatusId":"1","approvalLevelRoleId":"1","ascriptionTypeId":"1","personNominatorId":"1","personNomineeId":"1","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/Ascriptions [{"ascriptionParentId":null,"ascriptionStatusId":"1","approvalLevelRoleId":"1","ascriptionTypeId":"1","personNominatorId":"1","personNomineeId":"1"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/Ascriptions/1</li>
+                        </ul>
+
+                        <li>9.3.<span style="color:#424005;font-weight:bold;">AscriptionCriterias</span></li>
+                        <ul> <b> <small><i>The criteria that was selected by the person against the program's active criteria.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionCriterias</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionCriterias/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/AscriptionCriterias/1 [{"ascriptionId":"1","programCriteriaId":"1","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/AscriptionCriterias [{"ascriptionId":"1","programCriteriaId":"1"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/AscriptionCriterias/1</li>
+                        </ul>
 
 
 
@@ -416,12 +449,10 @@
                 </div>
             </div>
             <div class="panel-footer">
-                <div class="well">This document will be updated as i continue to develop the system..</div>
+                More detials to follow...
             </div>
         </div>
     </div>
-
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
