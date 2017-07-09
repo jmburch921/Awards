@@ -10,8 +10,9 @@ webserver.use(bodyParser.urlencoded({ extended: true }));
 webserver.use(bodyParser.json());
 
 //static folders to be able to point to css, js etc files in a directory
-webserver.use("/css", express.static(__dirname + '/client/css'));
+webserver.use("/css", express.static(__dirname + '/client/content/css'));
 webserver.use("/images", express.static(__dirname + '/client/content/images'));
+webserver.use("/js", express.static(__dirname + '/client/content/js'));
 
 //web site navigation
 webserver.get('/', function(req, res) {
