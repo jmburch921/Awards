@@ -17,6 +17,10 @@ And the third part is the pages or SPA's for each page<br/>
 #### Database
 The database that is used is a postgres 9.6, and can be at <a href="https://www.postgresql.org/">https://www.postgresql.org/</a>
 
+#### Markdown-Cheatsheet
+<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet</a>
+
+
 
 
 
