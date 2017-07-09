@@ -118,6 +118,13 @@ programCriteriaTypesRoutes(webserver);
 var programCriteriasRoutes = require('./api/routes/programCriteriasRoutes');
 programCriteriasRoutes(webserver);
 
+//7.1 Db table
+var ascriptionStatusesRoutes = require('./api/routes/ascriptionStatusesRoutes');
+ascriptionStatusesRoutes(webserver);
+//7.2 Db table
+var ascriptionTypesRoutes = require('./api/routes/ascriptionTypesRoutes');
+ascriptionTypesRoutes(webserver);
+
 
 
 

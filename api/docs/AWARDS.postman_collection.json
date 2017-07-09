@@ -8,6 +8,206 @@
 	},
 	"item": [
 		{
+			"name": "AscriptionStatuses",
+			"description": "",
+			"item": [
+				{
+					"name": "AscriptionStatuses",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionStatuses",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionStatuses/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionStatuses/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionStatuses",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionStatuses",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionStatuses/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionStatuses/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionStatuses/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionStatuses/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSonPut\",\n\"description\":\"This was added by a json put\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AscriptionTypes",
+			"description": "",
+			"item": [
+				{
+					"name": "AscriptionTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionTypes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionTypes/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionTypes/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionTypes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionTypes/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionTypes/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionTypes/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionTypes/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSonPut\",\n\"description\":\"This was added by a json put\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "EmploymentTypes",
 			"description": "",
 			"item": [
