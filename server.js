@@ -4,17 +4,23 @@ var port = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
 var path = require('path'); 
 
-    
-//middleware
+
+//middleware section
+//gets executed on each request
 webserver.use(bodyParser.urlencoded({ extended: true }));
 webserver.use(bodyParser.json());
 
-//static folders to be able to point to css, js etc files in a directory
+
+// static folders to be able to point to css, js etc files in a directory
+// directory structure from "client" folder, when you create another folder for example the "api" folder 
+// use the "../css/client.css" path to get one up folder so the path is correct
 webserver.use("/css", express.static(__dirname + '/client/content/css'));
 webserver.use("/images", express.static(__dirname + '/client/content/images'));
 webserver.use("/js", express.static(__dirname + '/client/content/js'));
 
-//web site navigation
+
+//Client website navigational pages
+//Each root patch maps to a relevant folder
 webserver.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/index.html'));
 });
@@ -43,6 +49,7 @@ webserver.get('/api/help/', function(req, res) {
 
 
 //API's
+//Apis are defined as /api/v1/ for the version and to denote that you are calling an api
 //1.1 Db table
 var personInformationAttributesRoutes = require('./api/routes/personInformationAttributesRoutes');
 personInformationAttributesRoutes(webserver);
