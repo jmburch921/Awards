@@ -1,11 +1,5 @@
-
-    <div class="container">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3><img src="images/trophy36x36.png" />&nbsp;The API layer</h3>
-            </div>
-            <div class="panel-body">
-                <div style="padding:15px;">
+#test
+ 
                     <div class="row"><b>The api layer is in development at the moment.</b></div>
                     <div class="row">There will be daily deploys as the application progresses.</div>
                     <div class="row">All the api's are tested on localhost:3000.</div>
@@ -157,14 +151,7 @@
 
                         <li>5.4.PeriodTypes</li>
                     </ul>
-                </div>
-            </div>
-            <div class="panel-footer">
-                <div class="well">This document will be updated as i continue to develop the system..</div>
-            </div>
-        </div>
-    </div>
-
+    
 
 
 
