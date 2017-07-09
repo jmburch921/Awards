@@ -52,7 +52,6 @@
                 <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/Roles [{"name":"nameValue","description":"descriptionValue"}]</li>
                 <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/Roles/1</li>
             </ul>
-
         </li>
         <li>2.1.<span style="color:#424005;font-weight:bold;">Persons</span>
             <ul>
@@ -93,8 +92,6 @@
                 <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/PersonRoles [{"personId":"1","personInformationAttributeId":"2","itemValue":"1231234","isHiddenAttribute":"0"}]</li>
                 <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/PersonRoles/1</li>
             </ul>
-
-
         </li>
         <li>3.1.<span style="color:#424005;font-weight:bold;">GroupTypes</span>
             <ul>
@@ -104,8 +101,6 @@
                 <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/GroupTypes [{"name":"nameValue","description":"descriptionValue"}]</li>
                 <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/GroupTypes/1</li>
             </ul>
-
-
         </li>
         <li>4.1.<span style="color:#424005;font-weight:bold;">Groups</span>
             <ul>
@@ -126,14 +121,6 @@
                 <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/GroupOfPersons/1</li>
             </ul>
         </li>
-
-
-
-
-
-
-
         <li>5.4.PeriodTypes</li>
     </ul>
-
 </body>
