@@ -199,7 +199,107 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\"ascriptionId\":\"1\",\n\"programCriteriaId\":\"1\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+							"raw": "{\n\"ascriptionId\":\"1\",\n\"mailToPersonId\":\"1\",\n\"subject\":\"subject\",\n\"bodyText\":\"body text\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AscriptionNotes",
+			"description": "",
+			"item": [
+				{
+					"name": "AscriptionNotes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionNotes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionNotes/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionNotes/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionNotes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionNotes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"ascriptionId\":\"1\",\n\"details\":\"this is the first note\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionNotes/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionNotes/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionNotes/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionNotes/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"ascriptionId\":\"1\",\n\"details\":\"this is the first note\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
 						},
 						"description": ""
 					},

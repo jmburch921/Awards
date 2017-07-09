@@ -453,7 +453,7 @@
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/AscriptionReasons/1</li>
                         </ul>
 
-                        <li>9.4.<span style="color:#424005;font-weight:bold;">AscriptionMailNotifications</span></li>
+                        <li>9.5.<span style="color:#424005;font-weight:bold;">AscriptionMailNotifications</span></li>
                         <ul> <b> <small><i>The message that will be delivered to the role player as a staging area.<br/>
                         Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionMailNotifications</li>
@@ -461,6 +461,26 @@
                             <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/AscriptionMailNotifications/1 [{"ascriptionId":"1","mailToPersonId":"1","subject":"subject","bodyText":"body text"}]</li>
                             <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/AscriptionMailNotifications [{"ascriptionId":"1","mailToPersonId":"1","subject":"subject","bodyText":"body text 111"}]</li>
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/AscriptionMailNotifications/1</li>
+                        </ul>
+
+                        <li>9.6.<span style="color:#424005;font-weight:bold;">AscriptionNotes</span></li>
+                        <ul> <b> <small><i>Notes on the ascriptions.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionNotes</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionNotes/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/AscriptionNotes/1 [{"ascriptionId":"1","details":"this is the first note","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/AscriptionNotes [{"ascriptionId":"1","details":"this is the first note"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/AscriptionNotes/1</li>
+                        </ul>
+
+                        <li>9.7.<span style="color:#424005;font-weight:bold;">AscriptionAudits</span></li>
+                        <ul> <b> <small><i>Notes on the ascriptions.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionAudits</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionAudits/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/AscriptionAudits/1 [{"ascriptionId":"1","details":"this is the first note","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/AscriptionAudits [{"ascriptionId":"1","details":"this is the first note"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/AscriptionAudits/1</li>
                         </ul>
 
 
