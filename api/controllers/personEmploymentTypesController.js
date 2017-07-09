@@ -7,15 +7,22 @@ exports.get_all_personEmploymentTypes = function (req, res) {
 };
 
 exports.create_a_personEmploymentType = function (req, res) {
-    var id = req.body.personEmploymentTypeId;
-    var personId = req.body.personId;
-    var employmentTypeId = req.body.employmentTypeId;
-    var dataPost = require('../dataAccess/dataPost');
-    dataPost('INSERT INTO public."PersonEmploymentTypes"("PersonEmploymentTypeId", "PersonId", "EmploymentTypeId", "InActive", "InActiveDate") ' +
-        'VALUES' +
-        '(' + id + ',\'' + personId + '\' ,\'' + employmentTypeId + '\',\'0\', \'1900-01-01\')',
-        function (results) {
-            res.send(results);
+    var dataGet = require('../dataAccess/dataGet');
+    dataGet('SELECT "PersonEmploymentTypeId" FROM public."PersonEmploymentTypes" order by "PersonEmploymentTypeId" desc LIMIT 1',
+        function (numberResults) {
+            var id = 1;
+            if (numberResults[0] != null) {
+                id = numberResults[0]["PersonEmploymentTypeId"] + 1;
+            }
+            var personId = req.body.personId;
+            var employmentTypeId = req.body.employmentTypeId;
+            var dataPost = require('../dataAccess/dataPost');
+            dataPost('INSERT INTO public."PersonEmploymentTypes"("PersonEmploymentTypeId", "PersonId", "EmploymentTypeId", "InActive", "InActiveDate") ' +
+                'VALUES' +
+                '(' + id + ',\'' + personId + '\' ,\'' + employmentTypeId + '\',\'0\', \'1900-01-01\')',
+                function (results) {
+                    res.send(results);
+                });
         });
 };
 

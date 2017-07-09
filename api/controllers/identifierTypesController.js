@@ -7,15 +7,22 @@ exports.get_all_identifierTypes = function (req, res) {
 };
 
 exports.create_a_identifierType = function (req, res) {
-    var id = req.body.identifierTypeId;
-    var name = req.body.name;
-    var description = req.body.description;
-    var dataPost = require('../dataAccess/dataPost');
-    dataPost('INSERT INTO public."IdentifierTypes"("IdentifierTypeId", "Name", "Description", "InActive", "InActiveDate") ' +
-        'VALUES' +
-        '(' + id + ',\'' + name + '\' ,\'' + description + '\',\'0\', \'1900-01-01\')',
-        function (results) {
-            res.send(results);
+    var dataGet = require('../dataAccess/dataGet');
+    dataGet('SELECT "IdentifierTypeId" FROM public."IdentifierTypes" order by "IdentifierTypeId" desc LIMIT 1',
+        function (numberResults) {
+            var id = 1;
+            if (numberResults[0] != null) {
+                id = numberResults[0]["IdentifierTypeId"] + 1;
+            }
+            var name = req.body.name;
+            var description = req.body.description;
+            var dataPost = require('../dataAccess/dataPost');
+            dataPost('INSERT INTO public."IdentifierTypes"("IdentifierTypeId", "Name", "Description", "InActive", "InActiveDate") ' +
+                'VALUES' +
+                '(' + id + ',\'' + name + '\' ,\'' + description + '\',\'0\', \'1900-01-01\')',
+                function (results) {
+                    res.send(results);
+                });
         });
 };
 

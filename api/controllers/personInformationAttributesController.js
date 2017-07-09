@@ -7,15 +7,22 @@ exports.get_all_personInformationAttributes = function (req, res) {
 };
 
 exports.create_a_personInformationAttribute = function (req, res) {
-    var id = req.body.personInformationAttributeId;
-    var name = req.body.name;
-    var description = req.body.description;
-    var dataPost = require('../dataAccess/dataPost');
-    dataPost('INSERT INTO public."PersonInformationAttributes"("PersonInformationAttributeId", "Name", "Description", "InActive", "InActiveDate") ' +
-        'VALUES' +
-        '(' + id + ',\'' + name + '\' ,\'' + description + '\',\'0\', \'1900-01-01\')',
-        function (results) {
-            res.send(results);
+    var dataGet = require('../dataAccess/dataGet');
+    dataGet('SELECT "PersonInformationAttributeId" FROM public."PersonInformationAttributes" order by "PersonInformationAttributeId" desc LIMIT 1',
+        function (numberResults) {
+            var id = 1;
+            if (numberResults[0] != null) {
+                id = numberResults[0]["PersonInformationAttributeId"] + 1;
+            }
+            var name = req.body.name;
+            var description = req.body.description;
+            var dataPost = require('../dataAccess/dataPost');
+            dataPost('INSERT INTO public."PersonInformationAttributes"("PersonInformationAttributeId", "Name", "Description", "InActive", "InActiveDate") ' +
+                'VALUES' +
+                '(' + id + ',\'' + name + '\' ,\'' + description + '\',\'0\', \'1900-01-01\')',
+                function (results) {
+                    res.send(results);
+                });
         });
 };
 

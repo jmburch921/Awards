@@ -35,7 +35,6 @@ module.exports = function (queryString, callback) {
                     var jsonString = JSON.stringify(result.rows);
                     var jsonResult = JSON.parse(jsonString);
                     jsonReturnResult = jsonResult;
-
                     client.end();
                     console.log(jsonReturnResult);
                     callback(jsonReturnResult);

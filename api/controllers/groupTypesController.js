@@ -6,15 +6,22 @@ exports.get_all_groupTypes = function (req, res) {
 };
 
 exports.create_a_groupType = function (req, res) {
-    var groupTypesId = req.body.groupTypesId;
-    var name = req.body.name;
-    var description = req.body.description;
-    var dataPost = require('../dataAccess/dataPost');
-    dataPost('INSERT INTO public."GroupTypes"("GroupTypeId", "Name", "Description", "InActive", "InActiveDate") ' +
-        'VALUES' +
-        '(' + groupTypesId + ',\'' + name + '\' ,\'' + description + '\',\'0\', \'1900-01-01\')',
-        function (results) {
-            res.send(results);
+    var dataGet = require('../dataAccess/dataGet');
+    dataGet('SELECT "GroupTypeId" FROM public."GroupTypes" order by "GroupTypeId" desc LIMIT 1',
+        function (numberResults) {
+            var id = 1; 
+            if(numberResults[0]!=null){
+                id = numberResults[0]["GroupTypeId"] + 1;
+            } 
+            var name = req.body.name;
+            var description = req.body.description;
+            var dataPost = require('../dataAccess/dataPost');
+            dataPost('INSERT INTO public."GroupTypes"("GroupTypeId", "Name", "Description", "InActive", "InActiveDate") ' +
+                'VALUES' +
+                '(' + id + ',\'' + name + '\' ,\'' + description + '\',\'0\', \'1900-01-01\')',
+                function (results) {
+                    res.send(results);
+                });
         });
 };
 
