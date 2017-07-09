@@ -22,13 +22,13 @@ webserver.get('/home/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/index.html'));
 });
 webserver.get('/people/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/client/pages/peopleManager.html'));
+    res.sendFile(path.join(__dirname + '/client/pages/peopleSpa.html'));
 });
 webserver.get('/programmes/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/client/pages/programsManager.html'));
+    res.sendFile(path.join(__dirname + '/client/pages/programsSpa.html'));
 });
 webserver.get('/ascriptions/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/client/pages/ascriptionsManager.html'));
+    res.sendFile(path.join(__dirname + '/client/pages/ascriptionsSpa.html'));
 });
 webserver.get('/about/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/website/about.html'));
@@ -36,8 +36,8 @@ webserver.get('/about/', function(req, res) {
 webserver.get('/contactus/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/website/contactus.html'));
 });
-webserver.get('/aboutapi/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/client/website/aboutapi.html'));
+webserver.get('/api/help/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/api/docs/apiDocumentation.html'));
 });
 
 
@@ -83,6 +83,28 @@ groupsRoutes(webserver);
 var groupOfPersonsRoutes = require('./api/routes/groupOfPersonsRoutes');
 groupOfPersonsRoutes(webserver);
 
+//5.1 Db table
+var entityTypesRoutes = require('./api/routes/entityTypesRoutes');
+entityTypesRoutes(webserver);
+//5.2 Db table
+var programInformationAttributesRoutes = require('./api/routes/programInformationAttributesRoutes');
+programInformationAttributesRoutes(webserver);
+//5.3 Db table
+var periodStatusesRoutes = require('./api/routes/periodStatusesRoutes');
+periodStatusesRoutes(webserver);
+//5.4 Db table
+var periodTypesRoutes = require('./api/routes/periodTypesRoutes');
+periodTypesRoutes(webserver);
+
+//6.1 Db table
+var programsRoutes = require('./api/routes/programsRoutes');
+programsRoutes(webserver);
+//6.2 Db table
+var programGroupsRoutes = require('./api/routes/programGroupsRoutes');
+programGroupsRoutes(webserver);
+//6.3 Db table
+var programInformationAttributeValuesRoutes = require('./api/routes/programInformationAttributeValuesRoutes');
+programInformationAttributeValuesRoutes(webserver);
 
 
 var programEntityTypesRoutes = require('./api/routes/programEntityTypesRoutes');
@@ -90,8 +112,7 @@ programEntityTypesRoutes(webserver);
 
 
 
-var periodTypes = require('./api/routes/periodTypesRoutes');
-periodTypes(webserver);
+
 
 
 webserver.listen(port);

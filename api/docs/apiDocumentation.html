@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/client.css">
+    <link rel="stylesheet" href="../css/client.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,7 +27,7 @@
 
 <body>
     <!-- NAV START -->
-    <nav class="navbar  navbar-inverse navbar-fixed-top">
+    <nav class="navbar  navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -38,7 +38,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-                <a class="navbar-brand" href="/home"><img src="images/ribbon24x24.png"/></a>
+                <a class="navbar-brand" href="/home"><img src="../images/ribbon24x24.png"/></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -50,7 +50,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Info <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/aboutapi">The API layer</a></li>
+                            <li><a href="/api/help">The API layer</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="/about">About us</a></li>
                             <li><a href="/contactus">Contact us</a></li>
@@ -66,7 +66,7 @@
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3><img src="images/trophy36x36.png" />&nbsp;The API layer</h3>
+                <h3><img src="../images/trophy36x36.png" />&nbsp;The API layer</h3>
             </div>
             <div class="panel-body">
                 <div style="padding:15px;">
@@ -210,16 +210,81 @@
                             <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/GroupOfPersons [{"groupId":"2","personId":"1"}]</li>
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/GroupOfPersons/1</li>
                         </ul>
+                        
+                        <hr/>
+
+                        <li>5.1.<span style="color:#424005;font-weight:bold;">EntityTypes</span></li>
+                        <ul> <b> <small><i>The type of entities, for example person, group, company, etc.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/EntityTypes</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/EntityTypes/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/EntityTypes/1 [{"name":"nameValue","description":"descriptionValue","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/EntityTypes [{"name":"nameValue","description":"descriptionValue"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/EntityTypes/1</li>
+                        </ul>
+
+                        <li>5.2.<span style="color:#424005;font-weight:bold;">ProgramInformationAttributes</span></li>
+                        <ul> <b> <small><i>Attributes you would like to record for a program , that is more fluid than hard program data. For example Home page, Administered by, etc.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramInformationAttributes</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramInformationAttributes/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/ProgramInformationAttributes/1 [{"name":"nameValue","description":"descriptionValue","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/ProgramInformationAttributes [{"name":"nameValue","description":"descriptionValue"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/ProgramInformationAttributes/1</li>
+                        </ul>
+
+                        <li>5.3.<span style="color:#424005;font-weight:bold;">PeriodStatuses</span></li>
+                        <ul> <b> <small><i>The status a period can be in.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/PeriodStatuses</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/PeriodStatuses/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/PeriodStatuses/1 [{"name":"nameValue","description":"descriptionValue","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/PeriodStatuses [{"name":"nameValue","description":"descriptionValue"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/PeriodStatuses/1</li>
+                        </ul>
+
+                        <li>5.4.<span style="color:#424005;font-weight:bold;">PeriodTypes</span></li>
+                        <ul> <b> <small><i>The type of a period for example daily, quarterly, yearly etc.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/PeriodTypes</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/PeriodTypes/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/PeriodTypes/1 [{"name":"nameValue","description":"descriptionValue","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/PeriodTypes [{"name":"nameValue","description":"descriptionValue"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/PeriodTypes/1</li>
+                        </ul>
 
                         <hr/>
 
+                        <li>6.1.<span style="color:#424005;font-weight:bold;">Programs</span></li>
+                        <ul> <b> <small><i>Define the program in this table, this is the base table and get periods etc added to it.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/Programs</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/Programs/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/Programs/1 [{"name":"nameValue","description":"descriptionValue","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/Programs [{"name":"nameValue","description":"descriptionValue"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/Programs/1</li>
+                        </ul>
 
+                        <li>6.2.<span style="color:#424005;font-weight:bold;">ProgramGroups</span></li>
+                        <ul> <b> <small><i>Link the program to a group or groups of people.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramGroups</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramGroups/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/ProgramGroups/1 [{"programId":"1","groupId":"1","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/ProgramGroups [{"programId":"1","groupId":"1"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/ProgramGroups/1</li>
+                        </ul>
 
+                        <li>6.3.<span style="color:#424005;font-weight:bold;">ProgramInformationAttributeValues</span></li>
+                        <ul> <b> <small><i>This table contains the values of the attribues of the program's information..<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramInformationAttributeValues</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramInformationAttributeValues/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/ProgramInformationAttributeValues/1 [{"programId":"1","programInformationAttributeId":"2","itemValue":"1231234  dsdsd","isHiddenAttribute": "0","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/ProgramInformationAttributeValues [{"programId":"1","programInformationAttributeId":"2","itemValue":"1231234","isHiddenAttribute":"0"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/ProgramInformationAttributeValues/1</li>
+                        </ul>
 
-
-
-
-                        <li>5.4.PeriodTypes</li>
                     </ul>
                 </div>
             </div>

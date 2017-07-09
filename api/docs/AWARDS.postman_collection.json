@@ -1,0 +1,1668 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AWARDS",
+		"_postman_id": "8b24b29f-9f95-a4ea-d104-50ad815a0996",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "EmploymentTypes",
+			"description": "",
+			"item": [
+				{
+					"name": "EmploymentTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/EmploymentTypes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "EmploymentTypes/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/EmploymentTypes/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "EmploymentTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/EmploymentTypes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "EmploymentTypes/5",
+					"request": {
+						"url": "http://localhost:3000/api/v1/EmploymentTypes/5",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "EmploymentTypes/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/EmploymentTypes/4",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSonPut\",\n\"description\":\"This was added by a json put\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EntityTypes",
+			"description": "",
+			"item": [
+				{
+					"name": "EntityTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/EntityTypes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "EntityTypes/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/EntityTypes/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "EntityTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/EntityTypes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "EntityTypes/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/EntityTypes/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "EntityTypes/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/EntityTypes/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSonPut\",\n\"description\":\"This was added by a json put\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GroupOfPersons",
+			"description": "",
+			"item": [
+				{
+					"name": "GroupOfPersons",
+					"request": {
+						"url": "http://localhost:3000/api/v1/GroupOfPersons",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GroupOfPersons/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/GroupOfPersons/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GroupOfPersons",
+					"request": {
+						"url": "http://localhost:3000/api/v1/GroupOfPersons",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"groupId\":\"1\",\n\"personId\":\"1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GroupOfPersons/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/GroupOfPersons/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GroupOfPersons/2",
+					"request": {
+						"url": "http://localhost:3000/api/v1/GroupOfPersons/2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"groupId\":\"2\",\n\"personId\":\"1\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GroupTypes",
+			"description": "",
+			"item": [
+				{
+					"name": "GroupTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/GroupTypes",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GroupTypes/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/GroupTypes/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GroupTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/GroupTypes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GroupTypes/11",
+					"request": {
+						"url": "http://localhost:3000/api/v1/GroupTypes/11",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "GroupTypes/10",
+					"request": {
+						"url": "http://localhost:3000/api/v1/GroupTypes/10",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSonPut\",\n\"description\":\"This was added by a json put\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Groups",
+			"description": "",
+			"item": [
+				{
+					"name": "Groups",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Groups",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Groups/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Groups/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Groups",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Groups",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"groupTypeId\":\"1\",\n\"roleId\":\"1\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Groups/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Groups/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Groups/2",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Groups/2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"groupTypeId\":\"1\",\n\"roleId\":\"1\",\n\"name\":\"JSon\",\n\"description\":\"edited\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "IdentifierTypes",
+			"description": "",
+			"item": [
+				{
+					"name": "IdentifierTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/IdentifierTypes",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "IdentifierTypes/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/IdentifierTypes/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "IdentifierTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/IdentifierTypes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"identifierTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "IdentifierTypes/5",
+					"request": {
+						"url": "http://localhost:3000/api/v1/IdentifierTypes/5",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "IdentifierTypes/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/IdentifierTypes/4",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSonPut\",\n\"description\":\"This was added by a json put\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PeriodStatuses",
+			"description": "",
+			"item": [
+				{
+					"name": "PeriodStatuses",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PeriodStatuses",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PeriodStatuses/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PeriodStatuses/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PeriodStatuses",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PeriodStatuses",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PeriodStatuses/8",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PeriodStatuses/8",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PeriodStatuses/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PeriodStatuses/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSonPut\",\n\"description\":\"This was added by a json put\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PeriodTypes",
+			"description": "",
+			"item": [
+				{
+					"name": "PeriodTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PeriodTypes",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PeriodTypes/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PeriodTypes/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PeriodTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PeriodTypes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PeriodTypes/12",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PeriodTypes/12",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PeriodTypes/10",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PeriodTypes/10",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSonPut\",\n\"description\":\"This was added by a json put\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PersonEmploymentTypes",
+			"description": "",
+			"item": [
+				{
+					"name": "PersonEmploymentTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonEmploymentTypes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonEmploymentTypes/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonEmploymentTypes/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonEmploymentTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonEmploymentTypes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"personId\":\"1\",\n\t\"employmentTypeId\":\"4\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonEmploymentTypes/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonEmploymentTypes/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonEmploymentTypes/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonEmploymentTypes/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n\t\"personId\":\"2\",\n\t\"employmentTypeId\":\"4\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PersonInformationAttributeValues",
+			"description": "",
+			"item": [
+				{
+					"name": "PersonInformationAttributes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonInformationAttributeValues",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonInformationAttributeValues/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonInformationAttributeValues/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonInformationAttributeValues",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonInformationAttributeValues",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"personId\":\"1\",\n\"personInformationAttributeId\":\"2\",\n\"itemValue\":\"1231234\",\n\"isHiddenAttribute\":\"0\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonInformationAttributeValues/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonInformationAttributeValues/3",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonInformationAttributeValues/2",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonInformationAttributeValues/2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"personId\":\"1\",\n\"personInformationAttributeId\":\"2\",\n\"itemValue\":\"1231234\",\n\"isHiddenAttribute\": \"0\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PersonInformationAttributes",
+			"description": "",
+			"item": [
+				{
+					"name": "PersonInformationAttributes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonInformationAttributes",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonInformationAttributes/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonInformationAttributes/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonInformationAttributes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonInformationAttributes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonInformationAttributes/5",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonInformationAttributes/5",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonInformationAttributes/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonInformationAttributes/4",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSonPut\",\n\"description\":\"This was added by a json put\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PersonRoles",
+			"description": "",
+			"item": [
+				{
+					"name": "PersonRoles",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonRoles",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonRoles/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonRoles/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonRoles",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonRoles",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"personRoleId\":\"3\",\n\"personId\":\"1\",\n\"roleId\":\"1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonRoles/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonRoles/3",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonRoles/2",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonRoles/2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"personId\":\"1\",\n\"roleId\":\"2\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PersonTypes",
+			"description": "",
+			"item": [
+				{
+					"name": "PersonTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonTypes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonTypes/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonTypes/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonTypes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonTypes/8",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonTypes/8",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "PersonTypes/7",
+					"request": {
+						"url": "http://localhost:3000/api/v1/PersonTypes/7",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSonPut\",\n\"description\":\"This was added by a json put\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Persons",
+			"description": "",
+			"item": [
+				{
+					"name": "Persons",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Persons",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Persons/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Persons/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Persons",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Persons",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"personTypeId\":\"1\",\n\"identifierTypeId\":\"1\",\n\"identifierValue\":\"metmom\\\\roolivier3\",\n\"managerPersonId\":\"1\",\n\"firstname\":\"Roche3\",\n\"lastname\":\"Olivier3\",\n\"eMail\":\"rolivier3@gmail.com\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Persons/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Persons/3",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "persons/2",
+					"request": {
+						"url": "http://localhost:3000/api/v1/persons/2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"personTypeId\":\"1\",\n\"identifierTypeId\":\"1\",\n\"identifierValue\":\"metmom\\\\roolivier3\",\n\"managerPersonId\":\"1\",\n\"firstname\":\"Roche3\",\n\"lastname\":\"Olivier3\",\n\"eMail\":\"json@gmail.com\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProgramGroups",
+			"description": "",
+			"item": [
+				{
+					"name": "ProgramGroups",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramGroups",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramGroups/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramGroups/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramGroups",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramGroups",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"programId\":\"1\",\n\"groupId\":\"1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramGroups/5",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramGroups/5",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramGroups/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramGroups/4",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"programId\":\"1\",\n\"groupId\":\"1\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProgramInformationAttributeValues",
+			"description": "",
+			"item": [
+				{
+					"name": "ProgramInformationAttributeValues",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramInformationAttributeValues",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramInformationAttributeValues/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramInformationAttributeValues/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramInformationAttributeValues",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramInformationAttributeValues",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"programId\":\"1\",\n\"programInformationAttributeId\":\"2\",\n\"itemValue\":\"1231234\",\n\"isHiddenAttribute\":\"0\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramInformationAttributeValues/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramInformationAttributeValues/3",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramInformationAttributeValues/2",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramInformationAttributeValues/2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"programId\":\"1\",\n\"programInformationAttributeId\":\"2\",\n\"itemValue\":\"1231234  dsdsd\",\n\"isHiddenAttribute\": \"0\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProgramInformationAttributes",
+			"description": "",
+			"item": [
+				{
+					"name": "ProgramInformationAttributes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramInformationAttributes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramInformationAttributes/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramInformationAttributes/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramInformationAttributes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramInformationAttributes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramInformationAttributes/5",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramInformationAttributes/5",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramInformationAttributes/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramInformationAttributes/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSonPut\",\n\"description\":\"This was added by a json put\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Programs",
+			"description": "",
+			"item": [
+				{
+					"name": "Programs",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Programs",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Programs/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Programs/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Programs",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Programs",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Programs/5",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Programs/5",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Programs/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Programs/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSonPut\",\n\"description\":\"This was added by a json put\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"description": "",
+			"item": [
+				{
+					"name": "Roles",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Roles",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Roles/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Roles/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Roles",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Roles",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Roles/15",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Roles/15",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Roles/14",
+					"request": {
+						"url": "http://localhost:3000/api/v1/Roles/14",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"name\":\"JSonPut\",\n\"description\":\"This was added by a json put\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
