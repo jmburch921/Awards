@@ -136,6 +136,9 @@ programAscriptionTypeStatusRolesRoutes(webserver);
 //9.1 Db table
 var ascriptionParentsRoutes = require('./api/routes/ascriptionParentsRoutes');
 ascriptionParentsRoutes(webserver);
+//9.2 Db table
+var ascriptionsRoutes = require('./api/routes/ascriptionsRoutes');
+ascriptionsRoutes(webserver);
 
 
 

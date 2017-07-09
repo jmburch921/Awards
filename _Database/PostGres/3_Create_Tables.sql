@@ -655,12 +655,12 @@ ALTER TABLE public."AscriptionParents" OWNER TO "Awards_Dev_User";
 CREATE TABLE public."Ascriptions"
 (
     "AscriptionId" integer NOT NULL,    
-    "AscriptionParentId" integer NOT NULL,   
-    "AscriptionStatusId" integer NULL,     
+    "AscriptionParentId" integer NULL,   
+    "AscriptionStatusId" integer NOT  NULL,     
     "ApprovalLevelRoleId" integer NULL,      
-    "AscriptionTypeId" integer NULL,         
-    "PersonNominatorId" integer NULL,         
-    "PersonNomineeId" integer NULL,   
+    "AscriptionTypeId" integer NOT  NULL,         
+    "PersonNominatorId" integer NOT  NULL,         
+    "PersonNomineeId" integer NOT  NULL,   
      "CreateDate" date,  
     "InActive" bit(1),
     "InActiveDate" date,    
