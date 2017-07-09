@@ -10,9 +10,7 @@
                     <div class="row">The following tables has basic CRUD apis added.</div>
                     <ul>
                         <li>1.1.<span style="color:#424005;font-weight:bold;">PersonInformationAttributes</span></li>
-
-                        <ul><b> <small><i>Attributes you would like to record for a person , that is more fluid than hard person data. For example Fax, Street address, Home phone, etc.<br/>
-                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+<ul>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/PersonInformationAttributes</li>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/PersonInformationAttributes/1</li>
                             <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/PersonInformationAttributes/1 [{"name":"nameValue","description":"descriptionValue","inactive":"1","inactiveDate":"1900-12-31"}]</li>
