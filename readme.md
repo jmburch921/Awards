@@ -1,4 +1,4 @@
-<body>
+<body style="font-size:8px;">
     <div class="row"><b>The api layer is in development at the moment.</b></div>
     <div class="row">There will be daily deploys as the application progresses.</div>
     <div class="row">All the api's are tested on localhost:3000.</div>
