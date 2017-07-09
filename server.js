@@ -71,13 +71,23 @@ personInformationAttributeValuesRoutes(webserver);
 var personRolesRoutes = require('./api/routes/personRolesRoutes');
 personRolesRoutes(webserver);
 
+//3.1 Db table
+var groupTypesRoutes = require('./api/routes/groupTypesRoutes');
+groupTypesRoutes(webserver);
+
+//4.1 Db table
+var groupsRoutes = require('./api/routes/groupsRoutes');
+groupsRoutes(webserver);
+//4.2 Db table
+var groupOfPersonsRoutes = require('./api/routes/groupOfPersonsRoutes');
+groupOfPersonsRoutes(webserver);
+
 
 
 var programEntityTypesRoutes = require('./api/routes/programEntityTypesRoutes');
 programEntityTypesRoutes(webserver);
 
-var groupTypesRoutes = require('./api/routes/groupTypesRoutes');
-groupTypesRoutes(webserver);
+
 
 var periodTypes = require('./api/routes/periodTypesRoutes');
 periodTypes(webserver);
