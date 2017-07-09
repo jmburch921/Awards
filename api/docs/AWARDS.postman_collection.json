@@ -108,6 +108,106 @@
 			]
 		},
 		{
+			"name": "AscriptionMailNotifications",
+			"description": "",
+			"item": [
+				{
+					"name": "AscriptionMailNotifications",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionMailNotifications",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionMailNotifications/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionMailNotifications/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionMailNotifications",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionMailNotifications",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"ascriptionId\":\"1\",\n\"mailToPersonId\":\"1\",\n\"subject\":\"subject\",\n\"bodyText\":\"body text\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionMailNotifications/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionMailNotifications/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionMailNotifications/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionMailNotifications/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"ascriptionId\":\"1\",\n\"programCriteriaId\":\"1\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "AscriptionParents",
 			"description": "",
 			"item": [
@@ -200,6 +300,106 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\"teamName\":\"JSon\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AscriptionReasons",
+			"description": "",
+			"item": [
+				{
+					"name": "AscriptionReasons",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionReasons",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionReasons/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionReasons/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionReasons",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionReasons",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"ascriptionCriteriaId\":\"1\",\n\"reasonText\":\"this is the reason\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionReasons/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionReasons/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionReasons/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionReasons/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"ascriptionCriteriaId\":\"1\",\n\"reasonText\":\"this is the reason\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
 						},
 						"description": ""
 					},

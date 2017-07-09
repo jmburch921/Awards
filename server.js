@@ -142,6 +142,12 @@ ascriptionsRoutes(webserver);
 //9.3 Db table
 var ascriptionCriteriasRoutes = require('./api/routes/ascriptionCriteriasRoutes');
 ascriptionCriteriasRoutes(webserver);
+//9.4 Db table
+var ascriptionReasonsRoutes = require('./api/routes/ascriptionReasonsRoutes');
+ascriptionReasonsRoutes(webserver);
+//9.5 Db table
+var ascriptionMailNotificationsRoutes = require('./api/routes/ascriptionMailNotificationsRoutes');
+ascriptionMailNotificationsRoutes(webserver);
 
 
 

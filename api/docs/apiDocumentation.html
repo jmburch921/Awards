@@ -443,6 +443,26 @@
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/AscriptionCriterias/1</li>
                         </ul>
 
+                        <li>9.4.<span style="color:#424005;font-weight:bold;">AscriptionReasons</span></li>
+                        <ul> <b> <small><i>The reason for each criteria selected.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionReasons</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionReasons/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/AscriptionReasons/1 [{"ascriptionCriteriaId":"1","reasonText":"this is the reason","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/AscriptionReasons [{"ascriptionCriteriaId":"1","reasonText":"this is the reason"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/AscriptionReasons/1</li>
+                        </ul>
+
+                        <li>9.4.<span style="color:#424005;font-weight:bold;">AscriptionMailNotifications</span></li>
+                        <ul> <b> <small><i>The message that will be delivered to the role player as a staging area.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionMailNotifications</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionMailNotifications/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/AscriptionMailNotifications/1 [{"ascriptionId":"1","mailToPersonId":"1","subject":"subject","bodyText":"body text"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/AscriptionMailNotifications [{"ascriptionId":"1","mailToPersonId":"1","subject":"subject","bodyText":"body text 111"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/AscriptionMailNotifications/1</li>
+                        </ul>
+
 
 
                     </ul>
