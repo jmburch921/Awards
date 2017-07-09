@@ -1,45 +1,64 @@
 
 exports.get_all_programEntityTypes = function (req, res) {
     var dataGet = require('../dataAccess/dataGet');
-    dataGet(req, res, 'SELECT * FROM public."ProgramEntityTypes"');
+    dataGet('SELECT * FROM public."ProgramEntityTypes"', function (results) {
+        res.send(results);
+    });
 };
 
 exports.create_a_programEntityType = function (req, res) {
-    var ProgramEntityTypeId = req.body.programEntityTypeId;
-    var Name = req.body.name;
-    var Description = req.body.description;
-    var dataPost = require('../dataAccess/dataPost');
-    dataPost(req, res, 
-    'INSERT INTO public."ProgramEntityTypes"("ProgramEntityTypeId", "Name", "Description", "InActive", "InActiveDate") '+
-    'VALUES'+
-    '('+ProgramEntityTypeId+',\''+Name+'\' ,\''+Description+'\',\'0\', \'1900-01-01\')');
+    var dataGet = require('../dataAccess/dataGet');
+    dataGet('SELECT "ProgramEntityTypeId" FROM public."ProgramEntityTypes" order by "ProgramEntityTypeId" desc LIMIT 1',
+        function (numberResults) {
+            var id = 1; 
+            if(numberResults[0]!=null){
+                id = numberResults[0]["ProgramEntityTypeId"] + 1;
+            } 
+            var programId = req.body.programId;
+            var entityTypeId = req.body.entityTypeId;
+            var dataPost = require('../dataAccess/dataPost');
+            dataPost('INSERT INTO public."ProgramEntityTypes"("ProgramEntityTypeId", "ProgramId", "EntityTypeId", "InActive", "InActiveDate") ' +
+                'VALUES' +
+                '(' + id + ',\'' + programId + '\' ,\'' + entityTypeId + '\',\'0\', \'1900-01-01\')',
+                function (results) {
+                    res.send(results);
+                });
+        });
 };
 
 exports.read_a_programEntityType = function (req, res) {
     var id = req.params.programEntityTypeId;
     var dataGet = require('../dataAccess/dataGet');
-    dataGet(req, res, 'SELECT * FROM public."ProgramEntityTypes" where "ProgramEntityTypeId" = '+id);
+    dataGet('SELECT * FROM public."ProgramEntityTypes" where "ProgramEntityTypeId" = ' + id,
+        function (results) {
+            res.send(results);
+        });
 };
 
 exports.update_a_programEntityType = function (req, res) {
     var id = req.params.programEntityTypeId;
-    var name = req.body.name;
-    var description = req.body.description;
+    var programId = req.body.programId;
+    var entityTypeId = req.body.entityTypeId;
     var inactive = req.body.inactive;
     var inactiveDate = req.body.inactiveDate;
-    var dataPut = require('../dataAccess/dataGet');
-    dataPut(req, res, 
-    ' UPDATE public."ProgramEntityTypes" '+
-    'SET '+
-    ' "Name"=\''+name+'\', '+
-    ' "Description"=\''+description+'\', '+
-    ' "InActive"=\''+inactive+'\', '+
-    ' "InActiveDate"=\''+inactiveDate+'\' '+
-	'where "ProgramEntityTypeId" = '+id);
+    var dataPut = require('../dataAccess/dataPut');
+    dataPut(' UPDATE public."ProgramEntityTypes" ' +
+        'SET ' +
+        ' "ProgramId"=\'' + programId + '\', ' +
+        ' "EntityTypeId"=\'' + entityTypeId + '\', ' +
+        ' "InActive"=\'' + inactive + '\', ' +
+        ' "InActiveDate"=\'' + inactiveDate + '\' ' +
+        'where "ProgramEntityTypeId" = ' + id,
+        function (results) {
+            res.send(results);
+        });
 };
 
 exports.delete_a_programEntityType = function (req, res) {
     var id = req.params.programEntityTypeId;
-    var dataDelete = require('../dataAccess/dataGet');
-    dataDelete(req, res, 'DELETE FROM public."ProgramEntityTypes" where "ProgramEntityTypeId" = '+id);
+    var dataDelete = require('../dataAccess/dataDelete');
+    dataDelete('DELETE FROM public."ProgramEntityTypes" where "ProgramEntityTypeId" = ' + id,
+        function (results) {
+            res.send(results);
+        });
 };

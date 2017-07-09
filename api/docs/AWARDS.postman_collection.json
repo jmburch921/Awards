@@ -1231,6 +1231,85 @@
 			]
 		},
 		{
+			"name": "ProgramEntityTypes",
+			"description": "",
+			"item": [
+				{
+					"name": "ProgramEntityTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramEntityTypes",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramEntityTypes/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramEntityTypes/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramEntityTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramEntityTypes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"programId\":\"1\",\n\"entityTypeId\":\"1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramEntityTypes/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramEntityTypes/3",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramEntityTypes/2",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramEntityTypes/2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"programId\":\"1\",\n\"entityTypeId\":\"1\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "ProgramGroups",
 			"description": "",
 			"item": [

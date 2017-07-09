@@ -105,10 +105,12 @@ programGroupsRoutes(webserver);
 //6.3 Db table
 var programInformationAttributeValuesRoutes = require('./api/routes/programInformationAttributeValuesRoutes');
 programInformationAttributeValuesRoutes(webserver);
-
-
+//6.4 Db table
 var programEntityTypesRoutes = require('./api/routes/programEntityTypesRoutes');
 programEntityTypesRoutes(webserver);
+
+
+
 
 
 
