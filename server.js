@@ -22,13 +22,13 @@ webserver.get('/home/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/index.html'));
 });
 webserver.get('/people/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/client/awardPersons/peopleManager.html'));
+    res.sendFile(path.join(__dirname + '/client/pages/peopleManager.html'));
 });
 webserver.get('/programmes/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/client/awardPrograms/programsManager.html'));
+    res.sendFile(path.join(__dirname + '/client/pages/programsManager.html'));
 });
 webserver.get('/ascriptions/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/client/awardAscriptions/ascriptionsManager.html'));
+    res.sendFile(path.join(__dirname + '/client/pages/ascriptionsManager.html'));
 });
 webserver.get('/about/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/website/about.html'));
