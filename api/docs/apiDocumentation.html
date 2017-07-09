@@ -363,6 +363,27 @@
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/AscriptionTypes/1</li>
                         </ul>
 
+                        <hr/>
+
+                        <li>8.1.<span style="color:#424005;font-weight:bold;">ProgramAscriptionTypes</span></li>
+                        <ul> <b> <small><i>Define the types of ascriptions there can be in a period type.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramAscriptionTypes</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramAscriptionTypes/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/ProgramAscriptionTypes/1 [{"ascriptionTypeId":"1","periodTypeId":"1","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/ProgramAscriptionTypes [{"ascriptionTypeId":"1","periodTypeId":"1"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/ProgramAscriptionTypes/1</li>
+                        </ul>
+
+                        <li>8.2.<span style="color:#424005;font-weight:bold;">ProgramAscriptionTypeStatusRoles</span></li>
+                        <ul> <b> <small><i>Define the roles in the statusses for the types of ascriptions there can be in a period type.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionTypes</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionTypes/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/AscriptionTypes/1 [{"programAscriptionTypeId":"1","ascriptionStatusId":"1","roleId":"1","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/AscriptionTypes [{"programAscriptionTypeId":"1","ascriptionStatusId":"1","roleId":"1"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/AscriptionTypes/1</li>
+                        </ul>
 
 
 

@@ -165,7 +165,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+							"raw": "{\n\"ascriptionTypeId\":\"1\",\n\"periodTypeId\":\"1\"\n}"
 						},
 						"description": ""
 					},
@@ -1423,6 +1423,206 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\"personTypeId\":\"1\",\n\"identifierTypeId\":\"1\",\n\"identifierValue\":\"metmom\\\\roolivier3\",\n\"managerPersonId\":\"1\",\n\"firstname\":\"Roche3\",\n\"lastname\":\"Olivier3\",\n\"eMail\":\"json@gmail.com\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProgramAscriptionTypeStatusRoles",
+			"description": "",
+			"item": [
+				{
+					"name": "ProgramAscriptionTypeStatusRoles",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramAscriptionTypeStatusRoles",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramAscriptionTypeStatusRoles/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramAscriptionTypeStatusRoles/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramAscriptionTypeStatusRoles",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramAscriptionTypeStatusRoles",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"programAscriptionTypeId\":\"1\",\n\"ascriptionStatusId\":\"1\",\n\"roleId\":\"1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramAscriptionTypeStatusRoles/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramAscriptionTypeStatusRoles/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramAscriptionTypeStatusRoles/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramAscriptionTypeStatusRoles/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"programAscriptionTypeId\":\"1\",\n\"ascriptionStatusId\":\"1\",\n\"roleId\":\"1\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProgramAscriptionTypes",
+			"description": "",
+			"item": [
+				{
+					"name": "ProgramAscriptionTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramAscriptionTypes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramAscriptionTypes/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramAscriptionTypes/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramAscriptionTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramAscriptionTypes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"ascriptionTypeId\":\"1\",\n\"periodTypeId\":\"1\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramAscriptionTypes/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramAscriptionTypes/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramAscriptionTypes/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramAscriptionTypes/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"ascriptionTypeId\":\"1\",\n\"periodTypeId\":\"1\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
 						},
 						"description": ""
 					},
