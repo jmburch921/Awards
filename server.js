@@ -126,14 +126,16 @@ var ascriptionTypesRoutes = require('./api/routes/ascriptionTypesRoutes');
 ascriptionTypesRoutes(webserver);
 
 
-//7.1 Db table
+//8.1 Db table
 var programAscriptionTypesRoutes = require('./api/routes/programAscriptionTypesRoutes');
 programAscriptionTypesRoutes(webserver);
-//7.2 Db table
+//8.2 Db table
 var programAscriptionTypeStatusRolesRoutes = require('./api/routes/programAscriptionTypeStatusRolesRoutes');
 programAscriptionTypeStatusRolesRoutes(webserver);
 
-
+//9.1 Db table
+var ascriptionParentsRoutes = require('./api/routes/ascriptionParentsRoutes');
+ascriptionParentsRoutes(webserver);
 
 
 

@@ -8,6 +8,106 @@
 	},
 	"item": [
 		{
+			"name": "AscriptionParents",
+			"description": "",
+			"item": [
+				{
+					"name": "AscriptionParents",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionParents",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionParents/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionParents/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionParents",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionParents",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"teamName\":\"JSon\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionParents/4",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionParents/4",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AscriptionParents/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/AscriptionParents/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"teamName\":\"JSon\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "AscriptionStatuses",
 			"description": "",
 			"item": [

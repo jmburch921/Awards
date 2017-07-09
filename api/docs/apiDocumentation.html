@@ -86,9 +86,11 @@
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/PersonInformationAttributes</li>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/PersonInformationAttributes/1</li>
                             <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/PersonInformationAttributes/1
-                                [{"name":"nameValue","description":"descriptionValue","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                                [{"name":"nameValue","description":"descriptionValue","inactive":"1","inactiveDate":"1900-12-31"}]
+                            </li>
                             <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/PersonInformationAttributes
-                                [{"name":"nameValue","description":"descriptionValue"}]</li>
+                                [{"name":"nameValue","description":"descriptionValue"}]
+                            </li>
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/PersonInformationAttributes/1</li>
                         </ul>
 
@@ -151,7 +153,8 @@
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/PersonEmploymentTypes/1</li>
                             <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/PersonEmploymentTypes/1 [{"personId":"1","employmentTypeId":"1","inactive":"1","inactiveDate":"1900-12-31"}]</li>
                             <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/PersonEmploymentTypes
-                                [{"personId":"1","employmentTypeId":"1"}]</li>
+                                [{"personId":"1","employmentTypeId":"1"}]
+                            </li>
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/PersonEmploymentTypes/1</li>
                         </ul>
 
@@ -165,7 +168,8 @@
                                 "0","inactive":"1","inactiveDate":"1900-12-31"}]
                             </li>
                             <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/PersonInformationAttributeValues
-                                [{"personId":"1","personInformationAttributeId":"2","itemValue":"1231234","isHiddenAttribute":"0"}]</li>
+                                [{"personId":"1","personInformationAttributeId":"2","itemValue":"1231234","isHiddenAttribute":"0"}]
+                            </li>
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/PersonInformationAttributeValues/1</li>
                         </ul>
 
@@ -234,9 +238,11 @@
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramInformationAttributes</li>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramInformationAttributes/1</li>
                             <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/ProgramInformationAttributes/1
-                                [{"name":"nameValue","description":"descriptionValue","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                                [{"name":"nameValue","description":"descriptionValue","inactive":"1","inactiveDate":"1900-12-31"}]
+                            </li>
                             <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/ProgramInformationAttributes
-                                [{"name":"nameValue","description":"descriptionValue"}]</li>
+                                [{"name":"nameValue","description":"descriptionValue"}]
+                            </li>
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/ProgramInformationAttributes/1</li>
                         </ul>
 
@@ -289,9 +295,11 @@
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramInformationAttributeValues/1</li>
                             <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/ProgramInformationAttributeValues/1
                                 [{"programId":"1","programInformationAttributeId":"2","itemValue":"1231234 dsdsd","isHiddenAttribute":
-                                "0","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                                "0","inactive":"1","inactiveDate":"1900-12-31"}]
+                            </li>
                             <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/ProgramInformationAttributeValues
-                                [{"programId":"1","programInformationAttributeId":"2","itemValue":"1231234","isHiddenAttribute":"0"}]</li>
+                                [{"programId":"1","programInformationAttributeId":"2","itemValue":"1231234","isHiddenAttribute":"0"}]
+                            </li>
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/ProgramInformationAttributeValues/1</li>
                         </ul>
 
@@ -311,9 +319,11 @@
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramEntityTypePeriods</li>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramEntityTypePeriods/1</li>
                             <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/ProgramEntityTypePeriods/1
-                                [{"programEntityTypeId":"1","periodStatusId":"1","periodTypeId":"1","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                                [{"programEntityTypeId":"1","periodStatusId":"1","periodTypeId":"1","inactive":"1","inactiveDate":"1900-12-31"}]
+                            </li>
                             <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/ProgramEntityTypePeriods
-                                [{"programEntityTypeId":"1","periodStatusId":"1","periodTypeId":"1"}]</li>
+                                [{"programEntityTypeId":"1","periodStatusId":"1","periodTypeId":"1"}]
+                            </li>
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/ProgramEntityTypePeriods/1</li>
                         </ul>
 
@@ -366,17 +376,19 @@
                         <hr/>
 
                         <li>8.1.<span style="color:#424005;font-weight:bold;">ProgramAscriptionTypes</span></li>
-                        <ul> <b> <small><i>Define the types of ascriptions there can be in a period type.<br/>
+                        <ul> <b> <small><i>Define the types of ascriptions there can be in a period type for a program.<br/>
                         Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramAscriptionTypes</li>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramAscriptionTypes/1</li>
-                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/ProgramAscriptionTypes/1 [{"ascriptionTypeId":"1","periodTypeId":"1","inactive":"1","inactiveDate":"1900-12-31"}]</li>
-                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/ProgramAscriptionTypes [{"ascriptionTypeId":"1","periodTypeId":"1"}]</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/ProgramAscriptionTypes/1
+                                [{"ascriptionTypeId":"1","periodTypeId":"1","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/ProgramAscriptionTypes
+                                [{"ascriptionTypeId":"1","periodTypeId":"1"}]</li>
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/ProgramAscriptionTypes/1</li>
                         </ul>
 
                         <li>8.2.<span style="color:#424005;font-weight:bold;">ProgramAscriptionTypeStatusRoles</span></li>
-                        <ul> <b> <small><i>Define the roles in the statusses for the types of ascriptions there can be in a period type.<br/>
+                        <ul> <b> <small><i>Define the roles in the statusses for the types of ascriptions there can be in a period type for a program.<br/>
                         Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionTypes</li>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionTypes/1</li>
@@ -384,6 +396,19 @@
                             <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/AscriptionTypes [{"programAscriptionTypeId":"1","ascriptionStatusId":"1","roleId":"1"}]</li>
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/AscriptionTypes/1</li>
                         </ul>
+
+                        <hr/>
+
+                        <li>9.1.<span style="color:#424005;font-weight:bold;">AscriptionParents</span></li>
+                        <ul> <b> <small><i>Parent records of ascriptions to group ascriptions together.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionParents</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/AscriptionParents/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/AscriptionParents/1 [{"name":"nameValue","description":"descriptionValue","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/AscriptionParents [{"name":"nameValue","description":"descriptionValue"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/AscriptionParents/1</li>
+                        </ul>
+
 
 
 
