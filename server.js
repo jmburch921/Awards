@@ -114,6 +114,9 @@ programEntityTypePeriodsRoutes(webserver);
 //6.6 Db table
 var programCriteriaTypesRoutes = require('./api/routes/programCriteriaTypesRoutes');
 programCriteriaTypesRoutes(webserver);
+//6.7 Db table
+var programCriteriasRoutes = require('./api/routes/programCriteriasRoutes');
+programCriteriasRoutes(webserver);
 
 
 

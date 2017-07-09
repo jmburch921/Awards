@@ -1231,11 +1231,205 @@
 			]
 		},
 		{
+			"name": "ProgramCriteriaTypes",
+			"description": "",
+			"item": [
+				{
+					"name": "ProgramCriteriaTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramCriteriaTypes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramCriteriaTypes/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramCriteriaTypes/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramCriteriaTypes",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramCriteriaTypes",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"programEntityTypeId\":\"1\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramCriteriaTypes/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramCriteriaTypes/3",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramCriteriaTypes/2",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramCriteriaTypes/2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"programEntityTypeId\":\"1\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProgramCriterias",
+			"description": "",
+			"item": [
+				{
+					"name": "ProgramCriterias",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramCriterias",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramCriterias/1",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramCriterias/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"employmentTypeId\":\"5\",\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramCriterias",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramCriterias",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"programCriteriaTypeId\":\"1\",\n\"programCriteriaParentId\":null,\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramCriterias/3",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramCriterias/3",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ProgramCriterias/2",
+					"request": {
+						"url": "http://localhost:3000/api/v1/ProgramCriterias/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"programCriteriaTypeId\":\"1\",\n\"programCriteriaParentId\":null,\n\"name\":\"JSon\",\n\"description\":\"This was added by a json post\",\n\"inactive\":\"1\",\n\"inactiveDate\":\"1900-12-31\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "ProgramEntityTypePeriods",
 			"description": "",
 			"item": [
 				{
-					"name": "ProgramEntityTypes",
+					"name": "ProgramEntityTypePeriods",
 					"request": {
 						"url": "http://localhost:3000/api/v1/ProgramEntityTypePeriods",
 						"method": "GET",

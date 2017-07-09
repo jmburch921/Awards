@@ -286,7 +286,7 @@
                         </ul>
 
                         <li>6.4.<span style="color:#424005;font-weight:bold;">ProgramEntityTypes</span></li>
-                        <ul> <b> <small><i>This table contains the values of the attribues of the program's information..<br/>
+                        <ul> <b> <small><i>Entity types that can use the application - link programs and entity types.<br/>
                         Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramEntityTypes</li>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramEntityTypes/1</li>
@@ -296,7 +296,7 @@
                         </ul>
 
                         <li>6.5.<span style="color:#424005;font-weight:bold;">ProgramEntityTypePeriods</span></li>
-                        <ul> <b> <small><i>This table contains the values of the attribues of the program's information..<br/>
+                        <ul> <b> <small><i>Different period types per entity type .<br/>
                         Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramEntityTypePeriods</li>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramEntityTypePeriods/1</li>
@@ -306,13 +306,23 @@
                         </ul>
 
                         <li>6.6.<span style="color:#424005;font-weight:bold;">ProgramCriteriaTypes</span></li>
-                        <ul> <b> <small><i>This table contains the values of the attribues of the program's information..<br/>
+                        <ul> <b> <small><i>Criteria types for the program per entity type, so only certain entity types can see certain criteria.<br/>
                         Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramCriteriaTypes</li>
                             <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramCriteriaTypes/1</li>
                             <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/ProgramCriteriaTypes/1 [{"programEntityTypeId":"1","name":"JSon","description":"This was added by a json post","inactive":"1","inactiveDate":"1900-12-31"}]</li>
                             <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/ProgramCriteriaTypes [{"programEntityTypeId":"1","name":"JSon","description":"This was added by a json post"}]</li>
                             <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/ProgramCriteriaTypes/1</li>
+                        </ul>
+
+                        <li>6.7.<span style="color:#424005;font-weight:bold;">ProgramCriterias</span></li>
+                        <ul> <b> <small><i>Criteria per criteria type - this can link to iteself as well to create child criteria.<br/>
+                        Tested and saved on postman. POST automatically increments the last record number by 1</i></small></b>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramCriterias</li>
+                            <li><span style="color:darkgreen;font-weight:bold;">GET : </span>/api/v1/ProgramCriterias/1</li>
+                            <li><span style="color:darkblue;font-weight:bold;">PUT : </span>/api/v1/ProgramCriterias/1 [{"programCriteriaTypeId":"1","programCriteriaParentId":null,"name":"JSon","description":"This was added by a json post","inactive":"1","inactiveDate":"1900-12-31"}]</li>
+                            <li><span style="color:darkorange;font-weight:bold;">POST : </span>/api/v1/ProgramCriterias [{"programCriteriaTypeId":"1","programCriteriaParentId":null,"name":"JSon","description":"This was added by a json post"}]</li>
+                            <li><span style="color:darkred;font-weight:bold;">DELETE : </span>/api/v1/ProgramCriterias/1</li>
                         </ul>
 
                     </ul>
