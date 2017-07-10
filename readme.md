@@ -9,8 +9,8 @@ It takes the form of people submitting nominations for each other that follows a
 
 #### Application breakdown
 The database - PostgreSQL<br/>
-API Layer to empost the data of the database.<br/>
-The CDN for the html, scripts, images and styles for the pages<br/>
+![Awards](https://github.com/roachmanza/Awards/blob/master/Client_Website_CDN/content/img/greentrophy16x16.png "Awards") API Layer to empost the data of the database.<br/>
+![Awards](https://github.com/roachmanza/Awards/blob/master/Client_Website_CDN/content/img/yellowtrophy16x16.png "Awards") The CDN for the html, scripts, images and styles for the pages<br/>
 ![Awards](https://github.com/roachmanza/Awards/blob/master/Client_Website_CDN/content/img/purpletrophy16x16.png "Awards") The client website - a container for the CDN, and the client facing part of the system.<br/>
 
 
