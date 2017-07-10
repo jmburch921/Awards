@@ -8,7 +8,7 @@ The awards system is a system where people can recognize the efforts of other pe
 It takes the form of people submitting nominations for each other that follows a process flow for approval and vetting.<br/>
 <br/>
 <br/>
-The appication consists of 4 seperate parts.<br/>
+#### Application breakdown
 The database - PostgreSQL<br/>
 API Layer to empost the data of the database.<br/>
 The CDN for the html, scripts, images and styles for the pages<br/>
