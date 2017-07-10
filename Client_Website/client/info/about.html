@@ -65,10 +65,10 @@
     <div class="container">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3><img src="images/trophy36x36.png"/>&nbsp;About Awards</h3>
+                <h3><img src="images/trophy36x36.png" />&nbsp;About Awards</h3>
             </div>
             <div class="panel-body">
-                Still in progress with the API<br/> Development continues nightly.
+                <p>Details: <strong data-bind="text: details"></strong></p>
             </div>
         </div>
     </div>
@@ -80,6 +80,19 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+
+    <!-- Knockout -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script>
+        // This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
+        function AppViewModel() {
+            this.details = "KNOCKOUT USED: and tested as this item.";
+        }
+
+        // Activates knockout.js
+        ko.applyBindings(new AppViewModel());
+    </script>
 </body>
 
 </html>

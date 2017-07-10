@@ -24,7 +24,8 @@ webserver.use("/js", express.static(__dirname + '/client/content/js'));
 webserver.get('/', function (req, res) {res.sendFile(path.join(__dirname + '/client/apiIndex.html'));});
 webserver.get('/home/', function (req, res) {res.sendFile(path.join(__dirname + '/client/apiIndex.html'));});
 webserver.get('/api/help', function (req, res) {res.sendFile(path.join(__dirname + '/client/apiDocumentation.html'));});
-
+//var CDN = "http://localhost:3002/";
+webserver.use("/CDN", express.static("http://localhost:3002/"));
 
 //API's
 //Apis are defined as /api/v1/ for the version and to denote that you are calling an api
