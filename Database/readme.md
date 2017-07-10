@@ -3,7 +3,7 @@
 
 ### How to get the database up and running
 Install postgres from the web site <a href="https://www.postgresql.org/">https://www.postgresql.org/</a><br/>
-<b>Change the .hbf-conf file</b> to facilitate your local database instance to be accessed from the API's<br/>
+<b>Change the 'pg_hba.conf' file</b> to facilitate your local database instance to be accessed from the API's @~\data\pg96<br/>
 <b>Create the user</b> with the script found <a href="https://github.com/roachmanza/Awards/blob/master/Database/PostGres/0_Create_User.sql">here</a><br/>
 <b>Create the database</b> with the script found <a href="https://github.com/roachmanza/Awards/blob/master/Database/PostGres/1_Create_Database.sql">here</a><br/>
 <b>Grant access</b> to the user with the script found <a href="https://github.com/roachmanza/Awards/blob/master/Database/PostGres/2_GrantAccess.sql">here</a><br/>
