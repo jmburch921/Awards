@@ -19,9 +19,13 @@ Clone the application to your local repo.<br/>
 
 
 ### What is used in the application
+#### Server side
 NodeJs.<br/>
 PostgreSQL.<br/>
 NGINX.<br/>
+#### Client side
+Knockout<br/>
+
 
 
 
