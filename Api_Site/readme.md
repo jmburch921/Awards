@@ -1,6 +1,5 @@
 
-![alt text](https://github.com/roachmanza/Awards/blob/master/client/content/images/bluetrophy.png "Awards")
-## AWARDS
+##  ![Awards](https://github.com/roachmanza/Awards/blob/master/Client_Website_CDN/content/img/greentrophy36x36.png "Awards") AWARDS API
 
 ### Welcome to the awards repo
 The appication consists of 3 seperate parts.<br/>
