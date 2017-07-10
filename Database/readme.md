@@ -1,17 +1,14 @@
-##  ![Awards](https://github.com/roachmanza/Awards/blob/master/Client_Website_CDN/content/img/redtrophy36x36.png "Awards") AWARDS CDN
+##  ![Awards](https://github.com/roachmanza/Awards/blob/master/Client_Website_CDN/content/img/redtrophy36x36.png "Awards") AWARDS DATABASE
 
 
-### Welcome to the awards repo
-The appication consists of 3 seperate parts.<br/>
-The first part is the website<br/>
-The second is the API layer<br/>
-And the third part is the pages or SPA's for each page<br/>
-
-### How to get the application up and running
-
-
-
-### Other dependencies
+### How to get the database up and running
+Install postgres from the web site <a href="https://www.postgresql.org/">https://www.postgresql.org/</a><br/>
+<b>Change the .hbf-conf file</b> to facilitate your local database instance to be accessed from the API's<br/>
+<b>Create the user</b> with the script found <a href="https://github.com/roachmanza/Awards/blob/master/Database/PostGres/0_Create_User.sql">here</a><br/>
+<b>Create the database</b> with the script found <a href="https://github.com/roachmanza/Awards/blob/master/Database/PostGres/1_Create_Database.sql">here</a><br/>
+<b>Grant access</b> to the user with the script found <a href="https://github.com/roachmanza/Awards/blob/master/Database/PostGres/2_GrantAccess.sql">here</a><br/>
+Create the <b>tables</b> with the script found <a href="https://github.com/roachmanza/Awards/blob/master/Database/PostGres/3_Create_Tables.sql">here</a><br/>
+<b>Create reference data </b> on the tables with the script found <a href="https://github.com/roachmanza/Awards/blob/master/Database/PostGres/3_Create_Tables.sql">here</a><br/>
 
 #### Database
 The database that is used is a postgres 9.6, and can be at <a href="https://www.postgresql.org/">https://www.postgresql.org/</a>
