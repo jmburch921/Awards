@@ -1,5 +1,3 @@
-
-![alt text](https://github.com/roachmanza/Awards/blob/master/client/content/images/bluetrophy.png "Awards")
 ## AWARDS CDN
 
 ### How to get the application up and running
@@ -17,7 +15,7 @@ http {<br/>
 Add a new file to the folder where the nginx.conf resides, called nginx-cdn.conf<br/>
 <br/>
 
-#Copy the contents below into that file:<br/>
+####Copy the contents below into that file:<br/>
 upstream backend {<br/>
 server localhost:3002;<br/>
 }<br/>
