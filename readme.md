@@ -24,7 +24,10 @@ NodeJs.<br/>
 PostgreSQL.<br/>
 NGINX.<br/>
 #### Client side
+HTML<br/>
+Javascript<br/>
 Knockout<br/>
+
 
 
 
