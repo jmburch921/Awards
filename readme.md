@@ -18,6 +18,10 @@ The client website - a container for the CDN, and the client facing part of the 
 Clone the application to your local repo.<br/>
 
 
+### What is used in the application
+NodeJs.<br/>
+PosygreSQL.<br/>
+NGINX.<br/>
 
 
 
