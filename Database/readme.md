@@ -1,6 +1,5 @@
+##  ![Awards](https://github.com/roachmanza/Awards/blob/master/Client_Website_CDN/content/img/redtrophy36x36.png "Awards") AWARDS CDN
 
-![alt text](https://github.com/roachmanza/Awards/blob/master/client/content/images/bluetrophy.png "Awards")
-## AWARDS
 
 ### Welcome to the awards repo
 The appication consists of 3 seperate parts.<br/>
