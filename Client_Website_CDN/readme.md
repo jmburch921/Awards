@@ -1,4 +1,4 @@
-## AWARDS CDN
+##  ![Awards](https://github.com/roachmanza/Awards/blob/master/Client_Website_CDN/content/img/yellowtrophy36x36.png "Awards") AWARDS CDN
 
 ### How to get the CDN up and running
 Install NGINX and cofigure as described below<br/>
