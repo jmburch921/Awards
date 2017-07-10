@@ -1,12 +1,6 @@
 
 ![alt text](https://github.com/roachmanza/Awards/blob/master/client/content/images/bluetrophy.png "Awards")
-## AWARDS
-
-### Welcome to the awards repo
-The appication consists of 3 seperate parts.<br/>
-The first part is the website<br/>
-The second is the API layer<br/>
-And the third part is the pages or SPA's for each page<br/>
+## AWARDS CDN
 
 ### How to get the application up and running
 Install NGINX and cofigure as described below<br/>
@@ -22,7 +16,8 @@ http {<br/>
 <br/>
 Add a new file to the folder where the nginx.conf resides, called nginx-cdn.conf<br/>
 <br/>
-Copy the contents below into that file:<br/>
+
+#Copy the contents below into that file:<br/>
 upstream backend {<br/>
 server localhost:3002;<br/>
 }<br/>
@@ -42,7 +37,6 @@ proxy_pass http://backend;<br/>
 proxy_set_header X-Real-IP $remote_addr;<br/>
 proxy_set_header Host $host;<br/>
 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;<br/>
-# Following is necessary for Websocket support<br/>
 proxy_http_version 1.1;<br/>
 proxy_set_header Upgrade $http_upgrade;<br/>
 proxy_set_header Connection "upgrade";<br/>
