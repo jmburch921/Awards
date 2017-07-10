@@ -6,8 +6,7 @@
 #### What is the awards system
 The awards system is a system where people can recognize the efforts of other people.<br/>
 It takes the form of people submitting nominations for each other that follows a process flow for approval and vetting.<br/>
-<br/>
-<br/>
+
 #### Application breakdown
 The database - PostgreSQL<br/>
 API Layer to empost the data of the database.<br/>
@@ -16,7 +15,6 @@ The client website - a container for the CDN, and the client facing part of the 
 
 ### How to get the application up and running
 Clone the application to your local repo.<br/>
-
 
 ### What is used in the application
 #### Server side
