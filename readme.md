@@ -1,6 +1,5 @@
 
-![Awards](https://github.com/roachmanza/Awards/blob/master/Client_Website_CDN/content/img/redtrophy36x36.png "Awards")
-## AWARDS system
+## AWARDS system ![Awards](https://github.com/roachmanza/Awards/blob/master/Client_Website_CDN/content/img/redtrophy36x36.png "Awards")
 
 ### Welcome to the awards system
 
