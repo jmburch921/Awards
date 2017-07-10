@@ -1,5 +1,5 @@
 
-![alt text](https://github.com/roachmanza/Awards/blob/master/client/content/images/bluetrophy.png "Awards")
+![alt text](https://github.com/roachmanza/Awards/blob/master/Client_Website/content/images/bluetrophy.png "Awards")
 ## AWARDS
 
 ### Welcome to the awards repo
