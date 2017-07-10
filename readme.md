@@ -20,7 +20,7 @@ Clone the application to your local repo.<br/>
 
 ### What is used in the application
 NodeJs.<br/>
-PosygreSQL.<br/>
+PostgreSQL.<br/>
 NGINX.<br/>
 
 
