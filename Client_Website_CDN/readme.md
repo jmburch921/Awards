@@ -15,7 +15,7 @@ http {<br/>
 Add a new file to the folder where the nginx.conf resides, called nginx-cdn.conf<br/>
 <br/>
 
-####Copy the contents below into that file:<br/>
+###Copy the contents below into that file:
 upstream backend {<br/>
 server localhost:3002;<br/>
 }<br/>
