@@ -1,31 +1,29 @@
 var express = require('express');
+var cors = require('cors');
 var webserver = express();
 var port = process.env.PORT || 3000;
 var bodyParser = require('body-parser');
-var path = require('path'); 
+var path = require('path');
 
+var allowCrossDomain = function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+};
 
-//middleware section
-//gets executed on each request
+webserver.use(allowCrossDomain);
+
 webserver.use(bodyParser.urlencoded({ extended: true }));
 webserver.use(bodyParser.json());
 
 // static folders to be able to point to css, js etc files in a directory
-// directory structure from "client" folder, when you create another folder for example the "api" folder 
-// use the "../css/client.css" path to get one up folder so the path is correct
 webserver.use("/css", express.static(__dirname + '/client/content/css'));
 webserver.use("/images", express.static(__dirname + '/client/content/images'));
 webserver.use("/js", express.static(__dirname + '/client/content/js'));
-
-webserver.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/client/apiIndex.html'));
-});
-webserver.get('/home/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/client/apiIndex.html'));
-});
-webserver.get('/api/help', function(req, res) {
-    res.sendFile(path.join(__dirname + '/client/apiDocumentation.html'));
-});
+webserver.get('/', function (req, res) {res.sendFile(path.join(__dirname + '/client/apiIndex.html'));});
+webserver.get('/home/', function (req, res) {res.sendFile(path.join(__dirname + '/client/apiIndex.html'));});
+webserver.get('/api/help', function (req, res) {res.sendFile(path.join(__dirname + '/client/apiDocumentation.html'));});
 
 
 //API's
