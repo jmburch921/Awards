@@ -1,0 +1,241 @@
+﻿<dom-module id="comp-vitel-email-spa">
+    <style>
+        :host {
+            display: block;
+        }
+    </style>
+
+    <template>
+        <content></content>
+        <table width="100%">
+            <tr>
+                <td width="30%" style="vertical-align: top;">          
+                </td><td width="70%" style="vertical-align: top;"></td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">
+                    <div class="loader-wrapper p-a-md " data-bind="visible: MediaChannelMenuLoading()" >
+                    <i class="fa fa-repeat fa-spin fa-1x"></i>
+                    <h4>Loading...</h4>
+                    </div>
+                    <div data-bind="visible : MediaChannelMenuHasError()">
+                        <div data-bind="text: MediaChannelMenuError()"></div>
+                    </div>
+                    <div data-bind="visible : MediaChannelMenuList().length < 1 && !MediaChannelMenuLoading()"   class="alert alert-info m-t alert-dismissible" role="alert" role="alert">
+                        <div class="fa fa-info-circle fa-lg alert-icon"></div>
+                        <strong>No media channles assigned.</strong><br>You are currently not assigned to any media channels.
+                    </div>
+                    <div class="table-responsive" data-bind="visible : MediaChannelMenuList().length > 0 && !MediaChannelMenuLoading()">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default" data-bind="foreach : MediaChannelMenuList()">
+                                <div class="panel-heading" role="tab" data-bind="attr: {id: 'heading'+$index()}">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" 
+                                        data-bind="attr: {'href': '#collapseManage'+$index(), 'aria-controls': 'collapseManage'+$index, 'aria-expanded': 'true'}">
+                                        <span data-bind="text : MediaChannelName()"></span>
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div class="panel-collapse collapse" role="tabpanel" data-bind="attr: {'id': 'collapseManage'+$index(), 'aria-labelledby': 'heading'+$index()}">
+                                    <div class="panel-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item" data-bind="click: LoadInboxForMediaChannel"><span class="badge">9</span><span data-bind="text : MediaChannelName()+' Inbox'" ></span></li> 
+                                            <li class="list-group-item" data-bind="click: LoadUnAssignedForMediaChannel"><span class="badge">9</span><span data-bind="text : MediaChannelName()+' Unassigned'" ></span></li>                                            
+                                            <li class="list-group-item" data-bind="click: LoadSentForMediaChannel"><span class="badge">2</span><span data-bind="text : MediaChannelName()+' Complete'" ></span> </li>
+                                            <li class="list-group-item" data-bind="click: LoadInboxForMediaChannelUser"><span class="badge">9</span><span >My Work</span></li>
+                                            <li class="list-group-item" data-bind="click: LoadSentForMediaChannelUser"><span class="badge">9</span><span >My completed mails</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>                    
+                        </div>
+                    </div>
+                </td>
+                <td style="vertical-align: top;">
+
+                    
+                    <div class="loader-wrapper p-a-md " data-bind="visible: MailLoading()" >
+                        <i class="fa fa-repeat fa-spin fa-1x"></i>
+                        <h4>Loading...</h4>
+                    </div>
+                    <div data-bind="visible : MailHasError()">
+                        <div data-bind="text: MailError()"></div>
+                    </div>
+                    <div data-bind="visible : MailList().length < 1 && !MailLoading()"   class="alert alert-link m-t alert-dismissible" role="alert" role="alert">
+                        <div class="fa fa-link-circle fa-lg alert-icon"></div>
+                        <strong>INFO: </strong>There are currently no items in the list.
+                    </div>
+
+                    <div class="loader-wrapper p-a-md " data-bind="visible: MailList().length > 0 && !MailLoading()" >
+                        <table class="table  table-striped"  >
+                            <thead >
+                            <tr >
+                                <th style="width: 5%;" class="hidden-xs">Id</th>
+                                <th style="width: 10%;">From</th>
+                                <th style="width: 20%;">Subject</th>                                
+                                <th style="width: 15%;">Status</th>
+                                <!--<th style="width: 25%;">ReceivedDateTime</th>-->
+                                <th style="width: 20%;">Received</th>                                
+                                <th style="width: 30%;">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody data-bind="foreach : MailList()">
+                            <tr >
+                                <td data-bind="text : Id()" class="hidden-xs"></td>
+                                <td data-toggle="tooltip" data-placement="top" data-bind="text : From() , attr: { 'title': From()}"></td>
+                                <td data-bind="text : Subject()"></td> 
+                                <td data-bind="text : Status()"></td>                                                      
+                                <!--<td data-bind="text : CreateDateTime()"></td>    -->
+                                <!--<td data-bind="text: moment(ReceivedDateTime()).format('YYYY MMM do h:mm:ss')"></td>                                                 -->
+                                <!--<td data-bind="text : TimeInQue()"></td>-->
+                                <td data-bind="text: moment(ReceivedDateTime()).fromNow()"></td> 
+                                <td class="pull-right"><button class="btn btn-sm" data-bind="visible: StatusId() == 2, click: Reply"><span class="glyphicon glyphicon-envelope"></span></button>
+                                <button class="btn btn-sm" data-bind="visible: StatusId() == 1||StatusId() == 3,click: AssignToMyself"><span class="glyphicon glyphicon-expand"></span></button>
+                                <button class="btn btn-sm" data-bind="visible: StatusId() == 2,click: UnAssignFromMyself"><span class="glyphicon glyphicon-unchecked"></span></button>
+                                <button class="btn btn-sm" data-bind="click: PreviewMail"><span class="glyphicon glyphicon-eye-open"></span></button>
+                                 <button class="btn btn-sm" data-bind="visible: StatusId() == 2 ,click: PendMail"><span class="glyphicon glyphicon-pause"></span></button>
+                                
+                                </td> 
+                                
+                            </tr>
+                            </tbody>
+                        </table>    
+                    <div>
+                </td>
+            </tr>
+        </table>
+
+
+        <div class="modal fade" id="EmailDisplay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel" data-bind="text : DialogFrom() +' '+ DialogStatus()"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        
+                        <div class="col-lg-12"> 
+                            <h4>From <small><span data-bind="text : DialogFrom()"></span>[<span data-bind="text : DialogFromEmail()"></span>]</small></h4>
+                            
+                        </div>
+
+                        <div class="col-lg-12"> 
+                           <span data-bind="text : DialogSubject()"></span>                
+                        </div>
+                        <hr>
+                        
+                        <div class="col-lg-12">                            
+                           <span data-bind="html : DialogBody()"></span>                
+                        </div><hr>
+
+                    </div>
+     
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button class="btn btn-sm" data-bind="click: AssignMyMail">Assign</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="modal fade" id="EmailErrorDisplay" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel" data-bind="text : DialogErrorHeader()"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                                                     <hr>
+                        
+                        <div class="col-lg-12">                            
+                           <span data-bind="text : DialogErrorMessage()"></span>                
+                        </div><hr>
+
+                    </div>
+     
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="EmailReplyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel" data-bind="text : 'Reply to '+ModalReplyFrom()"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+                        <hr>
+                        
+                        <div class="col-lg-12">                            
+                           <span data-bind="text : ModalReplyFrom()"></span>                
+                        </div><hr>
+
+                    </div>
+     
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Send</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        
+    </template>
+
+    <script src="comp-vitel-email-spa-js-v1.js"></script>
+    <script>
+        Polymer({
+            is: 'comp-vitel-email-spa',
+
+            properties: {
+                environmentUrl: {
+                    type: String,
+                    value: 'DEV'
+                }
+            },
+
+            vitelMediaChannelMenuViewModel : null,
+
+            ready: function () {
+                var self = this;
+                console.log(" >>> comp-vitel-email-spa <<< ");
+                self.vitelMediaChannelMenuViewModel = new VitelMediaChannelMenuViewModel(this);
+                ko.applyBindings(self.vitelMediaChannelMenuViewModel, this);
+                var vm = self.vitelMediaChannelMenuViewModel;            
+               
+                vm.Initialize(vitelTools.getDomainLoginFromPage(), self.environmentUrl,  self, self.vitelMediaChannelMenuViewModel);
+    
+            },
+
+
+            getname: function (name) {
+                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                    results = regex.exec(location.search);
+                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+
+        });
+
+
+    </script>
+    
+</dom-module>
