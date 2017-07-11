@@ -11,13 +11,6 @@ webserver.use(bodyParser.urlencoded({ extended: true }));
 webserver.use(bodyParser.json());
 
 
-// static folders to be able to point to css, js etc files in a directory
-// directory structure from "client" folder, when you create another folder for example the "api" folder 
-// use the "../css/client.css" path to get one up folder so the path is correct
-webserver.use("/images", express.static(__dirname + '/client/content/images'));
-webserver.use("/js", express.static(__dirname + '/client/content/js'));
-
-
 //Client website navigational pages
 //Each root patch maps to a relevant folder
 webserver.get('/', function(req, res) {
