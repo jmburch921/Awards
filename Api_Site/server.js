@@ -13,7 +13,7 @@ var allowCrossDomain = function (req, res, next) {
 };
 
 webserver.use(allowCrossDomain);
-
+// webserver.options('*', cors())
 webserver.use(bodyParser.urlencoded({ extended: true }));
 webserver.use(bodyParser.json());
 

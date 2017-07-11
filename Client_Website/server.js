@@ -20,8 +20,22 @@ webserver.get('/home/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/index.html'));
 });
 webserver.get('/people/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/client/pages/peopleSpa.html'));
+    res.sendFile(path.join(__dirname + '/client/pages/people/people.html'));
 });
+webserver.get('/people/list', function(req, res) {
+    res.sendFile(path.join(__dirname + '/client/pages/people/peopleList.html'));
+});
+webserver.get('/people/create', function(req, res) {
+    res.sendFile(path.join(__dirname + '/client/pages/people/peoplecreate.html'));
+});
+webserver.get('/people/view', function(req, res) {
+    res.sendFile(path.join(__dirname + '/client/pages/people/peopleview.html'));
+});
+webserver.get('/people/edit', function(req, res) {
+    res.sendFile(path.join(__dirname + '/client/pages/people/peopleedit.html'));
+});
+
+
 webserver.get('/programmes/', function(req, res) {
     res.sendFile(path.join(__dirname + '/client/pages/programsSpa.html'));
 });
