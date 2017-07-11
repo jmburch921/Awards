@@ -23,16 +23,16 @@
         self.ApiBaseUri(applicationTools.baseUrl(environment));
     };
 
-    self.OpenWrapupReason = function(){
-        var wrapupReasonId = this.id;
-        console.log("Opening "+ wrapupReasonId);
-        window.location.replace("../people/view?id="+ wrapupReasonId);
+    self.OpenPeople = function(){
+        var id = this.PersonId;
+        console.log("Opening "+ id);
+        window.location.replace("../people/view?id="+ id);
     }
     
-    self.EditWrapupReason = function(){
-        var wrapupReasonId = this.id;
-        console.log("Opening "+ wrapupReasonId);
-        window.location.replace("../people/edit?id="+ wrapupReasonId);
+    self.EditPeople = function(){
+         var id = this.PersonId;
+        console.log("Opening "+ id);
+        window.location.replace("../people/edit?id="+ id);
     }
     
     self.CreateWrapupReason = function(){

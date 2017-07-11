@@ -26,7 +26,7 @@
         self.ApiBaseUri(applicationTools.baseUrl(environment));
     };
 
-    self.OpenWrapupReasonList = function () {
+    self.OpenPeopleList = function () {
         window.location.replace("../people/list");
     };
 
@@ -42,7 +42,7 @@
     self.identifiervalue = ko.observable();
     self.inactive = ko.observable(true);
     self.inactiveDate = ko.observable();
-    self.CreateWrapupReasonItem = function () {
+    self.CreatePersonItem = function () {
         var jsonObject = JSON.stringify({
             personTypeId: self.personTypes().PersonTypeId,
             firstname: self.firstname(),
@@ -56,7 +56,7 @@
         var url = "";
         var headers = [applicationTools.appAuth.claimsHeader([applicationTools.appAuth.domainNameClaim(currentDomainLogin)])];
         url = self.ApiBaseUri() + self.apiUrl.postPerson;
-        ajaxAsync.ajaxPost(self, self.OpenWrapupReasonList, url, null, jsonObject, null, headers);
+        ajaxAsync.ajaxPost(self, self.OpenPeopleList, url, null, jsonObject, null, headers);
     };
 
     //Get the person types for the dropdown
