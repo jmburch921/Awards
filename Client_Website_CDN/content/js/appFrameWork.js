@@ -89,13 +89,13 @@ var ajaxAsync = {
             Authorization: "Bearer " + token
         } : {};
 
-        // if ((additionalHeaders !== undefined) && (additionalHeaders !== null)) {
-        //     $.each(additionalHeaders, function (index, headerItem) {
-        //         for (var attribName in headerItem) {
-        //             requestHeaders[attribName] = headerItem[attribName];
-        //         }
-        //     });
-        // }
+        if ((additionalHeaders !== undefined) && (additionalHeaders !== null)) {
+            $.each(additionalHeaders, function (index, headerItem) {
+                for (var attribName in headerItem) {
+                    requestHeaders[attribName] = headerItem[attribName];
+                }
+            });
+        }
         return $.ajax({
             async: true,
             type: method,
