@@ -30,7 +30,7 @@
     };
 
     self.OpenPeopleList = function () {
-        window.location.replace("../people/list");
+        window.location.replace("../people/search");
     };
     self.EditPeopleList = function () {
         window.location.replace("../people/Edit?id=" + currentPersonId);
@@ -71,37 +71,8 @@
         }
     }
     
-    self.getPersonTypeItem = function (id) {
-        for (var i = 0; i < self.availablePersonTypes().length; i++) {
-            var curId = self.availablePersonTypes()[i].PersonTypeId
-            if ( curId === id) {
-                console.log(self.availablePersonTypes()[i]);
-                return self.availablePersonTypes()[i];
-            }
-        }
-    }
-
-    self.getManagerItem = function (id) {
-        for (var i = 0; i < self.availableManagers().length; i++) {
-            var curId = self.availableManagers()[i].PersonId
-            if ( curId === id) {
-                console.log(self.availableManagers()[i]);
-                return self.availableManagers()[i];
-            }
-        }
-    }
-
-    self.getIdentifierItem = function (id) {
-        for (var i = 0; i < self.availableIdentifiers().length; i++) {
-            var curId = self.availableIdentifiers()[i].IdentifierTypeId
-            if ( curId === id) {
-                console.log(self.availableIdentifiers()[i]);
-                return self.availableIdentifiers()[i];
-            }
-        }
-    }
-
-
+    
+    
     //Get the person types for the dropdown
     self.GetPersonTypes = function () {
         self.availablePersonTypes.removeAll();
@@ -114,10 +85,22 @@
         if (result.success) {
             var data = result.data;
             for (var i = 0; i < data.length; i++) {
-                self.availablePersonTypes.push(data[i]);
+                var dataItem = data[i];
+                dataItem.testvalue = data[i].Name+" "+data[i].Name
+                self.availablePersonTypes.push(dataItem);
+            }
+        }
+    };
+    self.getPersonTypeItem = function (id) {
+        for (var i = 0; i < self.availablePersonTypes().length; i++) {
+            var curId = self.availablePersonTypes()[i].PersonTypeId
+            if ( curId === id) {
+                console.log(self.availablePersonTypes()[i]);
+                return self.availablePersonTypes()[i];
             }
         }
     }
+
     //Get the managers for the dropdown
     self.GetManagers = function () {
         self.availableManagers.removeAll();
@@ -130,10 +113,22 @@
         if (result.success) {
             var data = result.data;
             for (var i = 0; i < data.length; i++) {
-                self.availableManagers.push(data[i]);
+                var dataItem = data[i];
+                dataItem.Fullname = data[i].Firstname + " " + data[i].Lastname
+                self.availableManagers.push(dataItem);
             }
         }
     };
+    self.getManagerItem = function (id) {
+        for (var i = 0; i < self.availableManagers().length; i++) {
+            var curId = self.availableManagers()[i].PersonId
+            if ( curId === id) {
+                var dataItem = self.availableManagers()[i];
+                dataItem.Fullname = dataItem.Firstname + " " + dataItem.Lastname;
+                return dataItem;
+            }
+        }
+    }
     //Get the identifiers for the dropdown
     self.GetIdentifiers = function () {
         self.availableIdentifiers.removeAll();
@@ -141,7 +136,7 @@
         var headers = [applicationTools.appAuth.claimsHeader([applicationTools.appAuth.domainNameClaim(currentDomainLogin)])];
         url = self.ApiBaseUri() + self.apiUrl.getAllIdentifierTypes;
         ajaxAsync.ajaxGet(self, self._GetIdentifiers, url, null, null, null, headers);
-    };
+    };    
     self._GetIdentifiers = function (result) {
         if (result.success) {
             var data = result.data;
@@ -150,4 +145,13 @@
             }
         }
     };
+    self.getIdentifierItem = function (id) {
+        for (var i = 0; i < self.availableIdentifiers().length; i++) {
+            var curId = self.availableIdentifiers()[i].IdentifierTypeId
+            if ( curId === id) {
+                console.log(self.availableIdentifiers()[i]);
+                return self.availableIdentifiers()[i];
+            }
+        }
+    }
 }

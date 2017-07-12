@@ -1,0 +1,162 @@
+﻿<dom-module id="comp-people-search-list">
+    <style>
+         :host {
+            display: block;
+        }
+    </style>
+
+
+    <template>
+
+        <content></content>
+
+
+
+
+
+        <h4>Search for a person...</h4>
+        <div class="row" style="margin-bottom:2px;">
+            <div class="clearfix col-lg-12 col-md-12 p-x-0">
+                <div class="col-lg-12">
+                    Select the items you would like to search for by clicking the checkbox, and then typing in the value you would like to search
+                    for in the relevant text box.
+                </div>
+
+            </div>
+            <hr>
+            <div class="clearfix col-lg-12 col-md-12 p-x-0">
+                <div class="col-lg-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <input type="checkbox" data-bind="checked: firstnameCheckBox">
+                        </span>
+                        <input type="text" class="form-control" placeholder="Firstname" data-bind="value: firstnameSearchValue">
+                    </div>
+                    <!-- /input-group -->
+                </div>
+                <div class="col-lg-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <input type="checkbox" data-bind="checked: lastnameCheckBox">
+                        </span>
+                        <input type="text" class="form-control" placeholder="Lastname" data-bind="value: lastnameSearchValue">
+                    </div>
+                    <!-- /input-group -->
+                </div>
+                <div class="col-lg-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <input type="checkbox" data-bind="checked: emailCheckBox">
+                        </span>
+                        <input type="text" class="form-control" placeholder="Email" data-bind="value: emailSearchValue">
+                    </div>
+                    <!-- /input-group -->
+                </div>
+                <div class="col-lg-3">
+                    <button class="btn btm-default" data-bind="click: GetPeople()">Search</button>
+                    <button class="btn btm-default" data-bind="click: InitializeBaseState()">Reset</button>
+                    <button class="btn btm-default" data-bind="click: CreatePeople">New person</button>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+
+
+
+
+        <!-- <div class="loader-wrapper p-a-md " data-bind="visible: SearchDataLoading()" >
+            <i class="fa fa-repeat fa-spin fa-1x"></i>
+            <h4>SearchDataLoading : visible: true</h4>
+        </div>
+                <div class="loader-wrapper p-a-md " data-bind="visible: !SearchDataLoading()" >
+            <i class="fa fa-repeat fa-spin fa-1x"></i>
+            <h4>SearchDataLoading : visible : false</h4>
+        </div> -->
+
+        <div class="loader-wrapper p-a-md " data-bind="visible: SearchDataLoading()">
+            <i class="fa fa-repeat fa-spin fa-1x"></i>
+            <h4>loading</h4>
+        </div>
+
+
+        <div data-bind="visible : WrapupReasonHasError()">
+            <div data-bind="text: WrapupReasonError()"></div>
+        </div>
+
+        <div data-bind="visible : SearchDataList().length < 1 && !SearchDataLoading()" class="alert alert-warning m-t alert-dismissible"
+            role="alert" role="alert">
+            <div class="fa fa-info-circle fa-lg alert-icon"></div>
+            There are currently no items in the list.
+        </div>
+
+        <div class="table-responsive" data-bind="visible : SearchDataList().length > 0 && !SearchDataLoading()">
+            <table class="table  table-striped">
+                <thead>
+
+                    <tr>
+                        <th style="width: 5%;" class="hidden-xs">Id</th>
+                        <th style="width: 25%;">Name & surname</th>
+                        <th style="width: 50%;">Email</th>
+                        <th style="width: 5%;">Active</th>
+                        <th style="width: 10%;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach : SearchDataList()">
+                    <tr>
+                        <td data-bind="text : PersonId" class="hidden-xs"></td>
+                        <td data-bind="text : Firstname + ' ' + Lastname"></td>
+                        <td data-bind="text : EMail"></td>
+
+                        <td>
+                            <span class="glyphicon glyphicon-ok-circle" style="color:green" data-bind="visible : InActive"></span>
+                            <span class="glyphicon glyphicon-ban-circle" style="color:red" data-bind="visible : !InActive"></span>
+                        </td>
+
+                        <td>
+                            <button class="btn btn-default btn-xs" data-bind="click: $root.OpenPeople">Open</button>
+                            <button class="btn btn-default btn-xs" data-bind="click: $root.EditPeople">Edit</button>
+                        </td>
+
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </template>
+
+    <script src="comp-people-search-list-js-v1.js"></script>
+    <script>
+        Polymer({
+            is: 'comp-people-search-list',
+
+            properties: {
+                environmentUrl: {
+                    type: String,
+                    value: 'DEV'
+                }
+            },
+
+            peopleSpaViewModel: null,
+
+            ready: function () {
+                
+
+                var self = this;
+
+                self.peopleSpaViewModel = new PeopleSpaViewModel(this);
+                ko.applyBindings(self.peopleSpaViewModel, this);
+                var vm = self.peopleSpaViewModel;
+                vm.Initialize(self.environmentUrl, self, self.peopleSpaViewModel);
+                $(document).keypress(function (e) {
+                    if (e.keyCode == 13) {
+                        vm.GetPeople();
+                    }
+                });
+            }
+        });
+    </script>
+
+</dom-module>

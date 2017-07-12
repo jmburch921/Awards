@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="http://localhost:8001/img/purpletrophy36x36.png" sizes="36x36">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Awards application</title>
+    <title>Awards people list</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
@@ -14,27 +14,30 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
         crossorigin="anonymous">
-
+    <link rel="stylesheet" href="http://localhost:8001/css/client.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="http://localhost:8001/css/client.css">
+    <script type="text/javascript" src="http://localhost:8001/js/jquery1-12-4.min.js"></script>
+    <!-- Bootstrap -->
     <script type="text/javascript" src="http://localhost:8001/js/bootstrap.min.js"></script>
-    <!--webcomponents-lite.min.js is the Polyfill for Shadow DOM and html Imports-->
+    <!-- 'webcomponents-lite.min.js' is the Polyfill for Shadow DOM and html Imports-->
     <script type="text/javascript" src="http://localhost:8001/js/webcomponents-lite.js"></script>
+    <!-- Application framework to work with the components -->
     <script type="text/javascript" src="http://localhost:8001/js/appFrameWork.js"></script>
     <!-- Knockout -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
 </head>
 
 <body>
+    <link rel="import" href="http://localhost:8001/js/polymer/polymer.html" />
+    <link rel="import" href="http://localhost:8001/components/people/comp-people-search-list.html" />
     <!-- NAV START -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -42,11 +45,11 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
                     aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                 <a class="navbar-brand" href="/home"><img src="http://localhost:8001/img/purpletrophy24x24.png"/></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -76,18 +79,12 @@
                 <h3><img src="http://localhost:8001/img/purpletrophy36x36.png"></span>&nbsp;People</h3>
             </div>
             <div class="panel-body">
-                Welcome the the people part of the applicaiton.<br>
-                You can add people here, assign a role or roles to a person<br/>
-                Assign employment type or types to a person<br/>
-                Add additional attributes to a person record<br/>
-
+                <!-- List of people component -->
+                <comp-people-search-list id="peopleid" environment-Url="DEV"></comp-people-search-list>
                 <br/>
-                <button class = "btn btm-default" onclick="window.location.replace('people/list')">List of people</button> 
-                <button class = "btn btm-default" onclick="window.location.replace('people/search')">Search</button>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

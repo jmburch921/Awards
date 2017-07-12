@@ -15,9 +15,9 @@
 
     self.apiUrl = {
         getAllPersons: "api/v1/Persons",
-        getAllPersonTypes : "api/v1/PersonTypes",
-        getAllIdentifierTypes :  "api/v1/IdentifierTypes",
-        postPerson : "api/v1/Persons"
+        getAllPersonTypes: "api/v1/PersonTypes",
+        getAllIdentifierTypes: "api/v1/IdentifierTypes",
+        postPerson: "api/v1/Persons"
     }
     //Initialize and get the nominations
     self.Initialize = function (env, parentContext, model) {
@@ -27,7 +27,7 @@
     };
 
     self.OpenPeopleList = function () {
-        window.location.replace("../people/list");
+        window.location.replace("../people/search");
     };
 
     self.personTypes = ko.observable("");
@@ -63,15 +63,16 @@
     self.GetPersonTypes = function () {
         self.availablePersonTypes.removeAll();
         var url = "";
-       var headers = [applicationTools.appAuth.claimsHeader([applicationTools.appAuth.domainNameClaim(currentDomainLogin)])];
+        var headers = [applicationTools.appAuth.claimsHeader([applicationTools.appAuth.domainNameClaim(currentDomainLogin)])];
         url = self.ApiBaseUri() + self.apiUrl.getAllPersonTypes;
         ajaxAsync.ajaxGet(self, self._GetPersonTypes, url, null, null, null, headers);
     };
     self._GetPersonTypes = function (result) {
-       if (result.success) {
+        if (result.success) {
             var data = result.data;
             for (var i = 0; i < data.length; i++) {
-                self.availablePersonTypes.push(data[i]);
+                var dataItem = data[i];
+                self.availablePersonTypes.push(dataItem);
             }
         }
     }
@@ -84,10 +85,12 @@
         ajaxAsync.ajaxGet(self, self._GetManagers, url, null, null, null, headers);
     };
     self._GetManagers = function (result) {
-       if (result.success) {
+        if (result.success) {
             var data = result.data;
             for (var i = 0; i < data.length; i++) {
-                self.availableManagers.push(data[i]);
+                var dataItem = data[i];
+                dataItem.Fullname = data[i].Firstname + " " + data[i].Lastname
+                self.availableManagers.push(dataItem);
             }
         }
     };
@@ -100,10 +103,12 @@
         ajaxAsync.ajaxGet(self, self._GetIdentifiers, url, null, null, null, headers);
     };
     self._GetIdentifiers = function (result) {
-       if (result.success) {
+        if (result.success) {
             var data = result.data;
             for (var i = 0; i < data.length; i++) {
-                self.availableIdentifiers.push(data[i]);
+                var dataItem = data[i];
+                dataItem.testvalue = data[i].Name + " " + data[i].Name
+                self.availableIdentifiers.push(dataItem);
             }
         }
     };
