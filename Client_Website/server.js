@@ -17,12 +17,11 @@ webserver.use(session({
 //https://github.com/auth0/passport-windowsauth
 passport.use(new WindowsStrategy({
     ldap: {
-
         url: 'ldap://xxxxx:xx/xx',
         base: 'xxx',
         bindDN: 'xx',
-        bindCredentials: 'xx'
-
+       bindCredentials: 'xx'
+        
 
     },
     integrated: false
