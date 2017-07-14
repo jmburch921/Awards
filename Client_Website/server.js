@@ -1,23 +1,29 @@
 var express = require('express');
 var webserver = express();
-var port = process.env.PORT || 3001;
+var port = process.env.PORT || 4001;
 var bodyParser = require('body-parser');
 var path = require('path');
-
-//https://github.com/auth0/passport-windowsauth
 var passport = require('passport');
 var WindowsStrategy = require('passport-windowsauth');
 var ensureLoggedIn = require('connect-ensure-login')
 
 var session = require('express-session');
-webserver.use(session({secret: 'keyboard cat', resave: true, saveUninitialized: false}));
+webserver.use(session({
+    secret: 'keyboard cat',
+    resave: true,
+    saveUninitialized: false
+}));
 
+//https://github.com/auth0/passport-windowsauth
 passport.use(new WindowsStrategy({
     ldap: {
+
         url: 'ldap://xxxxx:xx/xx',
         base: 'xxx',
         bindDN: 'xx',
         bindCredentials: 'xx'
+
+
     },
     integrated: false
 }, function (profile, done) {
@@ -44,77 +50,80 @@ passport.deserializeUser(function (user, done) {
     done(null, user);
 });
 
-//middleware section
-//gets executed on each request
-webserver.use(bodyParser.urlencoded({ extended: true }));
+//MIDDLEWARE SECTION
+webserver.use(bodyParser.urlencoded({
+    extended: true
+}));
 webserver.use(bodyParser.json());
 webserver.use(passport.initialize());
 webserver.use(passport.session());
 
-//Post for the login form
+//POST: Login form
 webserver.post('/login', passport.authenticate('WindowsAuthentication', {
     successRedirect: '/home',
-    failureRedirect: '/testerror',
+    failureRedirect: '/loginerror',
     failureFlash: true,
     session: true
 }));
 
-//Client website navigational pages
-//Each root patch maps to a relevant folder
-// webserver.get('/testsuccess', function (req, res) {
-//      console.log("INTO testsuccess.......");
-//     isAuthenticated(req, res);   
-//     res.sendFile(path.join(__dirname + '/client/index.html'));
-// });
-//TODO: removed ensureLoggedIn logged in
-webserver.get('/testerror',
-    function (req, res) {
-        console.log("INTO testerror.......");
-        res.sendFile(path.join(__dirname + '/client/error.html'));
-    });
+//GETS: Login and authorisations
+webserver.get('/loginerror', function (req, res) {
+    console.log("An error occured with a login");
+    res.sendFile(path.join(__dirname + '/client/error.html'));
+});
 webserver.get('/login', function (req, res) {
     res.sendFile(path.join(__dirname + '/client/login.html'));
 });
-
-
 webserver.get('/', function (req, res) {
     isAuthenticated(req, res);
     res.sendFile(path.join(__dirname + '/client/login.html'));
 });
+
+//GETS: Home page
 webserver.get('/home/', function (req, res) {
     isAuthenticated(req, res);
     res.sendFile(path.join(__dirname + '/client/index.html'));
 });
 
+//GETS: People pages
 webserver.get('/people/', function (req, res) {
     isAuthenticated(req, res);
     res.sendFile(path.join(__dirname + '/client/pages/people/people.html'));
 });
 webserver.get('/people/list', function (req, res) {
+    isAuthenticated(req, res);
     res.sendFile(path.join(__dirname + '/client/pages/people/peopleList.html'));
 });
 webserver.get('/people/create', function (req, res) {
+    isAuthenticated(req, res);
     res.sendFile(path.join(__dirname + '/client/pages/people/peoplecreate.html'));
 });
 webserver.get('/people/view', function (req, res) {
+    isAuthenticated(req, res);
     res.sendFile(path.join(__dirname + '/client/pages/people/peopleview.html'));
 });
 webserver.get('/people/edit', function (req, res) {
+    isAuthenticated(req, res);
     res.sendFile(path.join(__dirname + '/client/pages/people/peopleedit.html'));
 });
 webserver.get('/people/search', function (req, res) {
+    isAuthenticated(req, res);
     res.sendFile(path.join(__dirname + '/client/pages/people/peopleSearchList.html'));
 });
 
-
+//GETS: Program pages
 webserver.get('/programmes/', function (req, res) {
     isAuthenticated(req, res);
     res.sendFile(path.join(__dirname + '/client/pages/programsSpa.html'));
 });
+
+//GETS: Ascription pages
 webserver.get('/ascriptions/', function (req, res) {
     isAuthenticated(req, res);
     res.sendFile(path.join(__dirname + '/client/pages/ascriptionsSpa.html'));
 });
+
+//GETS: Public pages pages
 webserver.get('/about/', function (req, res) {
     res.sendFile(path.join(__dirname + '/client/info/about.html'));
 });
