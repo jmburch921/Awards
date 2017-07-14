@@ -14,10 +14,10 @@ webserver.use(session({secret: 'keyboard cat', resave: true, saveUninitialized: 
 
 passport.use(new WindowsStrategy({
     ldap: {
-        url: 'ldap://mmcenvdc08.metmom.mmih.biz:389/DC=metmom,DC=mmih,DC=biz',
-        base: 'DC=metmom,DC=mmih,DC=biz',
-        bindDN: 'sharepointdev',
-        bindCredentials: 'M0m3ntum123456'
+        url: 'ldap://xxxxx:xx/xx',
+        base: 'xxx',
+        bindDN: 'xx',
+        bindCredentials: 'xx'
     },
     integrated: false
 }, function (profile, done) {
